@@ -1,6 +1,7 @@
 # Django settings for newproject project.
 
 import os
+gettext = lambda s: s
 PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
 
@@ -133,7 +134,6 @@ INSTALLED_APPS = (
     # 'raven.contrib.django',
     'south',
     'newproject_app',
-
 )
 
 # A sample logging configuration. The only tangible logging

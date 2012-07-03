@@ -17,9 +17,9 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_PATH, 'db.sql'),                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'newproject',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
@@ -27,3 +27,19 @@ DATABASES = {
 }
 
 INTERNAL_IPS = ('127.0.0.1', )
+
+LOCAL_INSTALLED_APPS = (
+    'mptt',
+    'menus',
+    'sekizai',
+    'south',
+    'tagging',
+    # Custom
+    'blog',
+)
+
+
+LANGUAGES = [
+    ('en-us', 'English'),
+    ('bg', 'Bulgarian'),
+]
