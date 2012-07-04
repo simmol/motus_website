@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="span8 offset2 center pad-top5 pad-bottom5">
+        <!-- Post  -->
+        <div id="post">
+            <div class="title">
+              {{ post.title }}
+            </div>
+
+            <div>
+              <div class="time">{{ post.created }}</div>
+              <div class="body">{{ post.body|linebreaks }}</div>
+            </div>
+        </div>
+        <a href="{%url blog %}">Back to all posts</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
