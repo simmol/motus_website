@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     #Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
+    (r'^i18n/', include('django.conf.urls.i18n')),
 
     #App url include
     url(r'^', include('newproject_app.appurls')),
@@ -25,12 +26,14 @@ urlpatterns = patterns('',
 #   url(r'^newproject/$', 'newproject_view', name='newproject'),
 #)
 
-urlpatterns += patterns('',
-    url(r'', include('feincms.urls')),
-)
+#urlpatterns += patterns('',
+#    url(r'', include('feincms.urls')),
+#)
 
 urlpatterns += patterns('blog.views',
-   (r"", "main"),
+  url(r'^blog/post/(?P<post_slug>[a-z\-0-9]*)/', 'post', name='post'),
+  url(r'^blog/post/(?P<post_id>\d)/', 'post', name='post-id'),
+  url(r'^blog', 'main', name='blog'),
 )
 
 if settings.DEBUG:

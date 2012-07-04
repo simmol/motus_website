@@ -1,22 +1,32 @@
-{% extends "blog/bbase.html" %}
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
 
 {% block content %}
-    <div class="main">
-
+  <div class="row">
+    <div class="span8 offset2 center pad-top5 pad-bottom5">
         <!-- Posts  -->
         <ul>
             {% for post in posts.object_list %}
-                <div class="title">{{ post.title }}</div>
-                <ul>
-                    <div class="time">{{ post.created }}</div>
-                    <div class="body">{{ post.body|linebreaks }}</div>
-                </ul>
+            <div class="title">
+              <a href="{% url post post.slug %}">
+                {{ post.title }}
+              </a>
+            </div>
+
+            <ul>
+              <div class="time">{{ post.created }}</div>
+              <div class="body">{{ post.body|linebreaks }}</div>
+            </ul>
             {% endfor %}
         </ul>
 
         <!-- Next/Prev page links  -->
         {% if posts.object_list and posts.paginator.num_pages > 1 %}
-        <div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
+        <div class="paginator" style="margin-top: 20px; margin-left: -20px; ">
             <span class="step-links">
                 {% if posts.has_previous %}
                     <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>
@@ -32,7 +42,8 @@
             </span>
         </div>
         {% endif %}
-
     </div>
-
+  </div>
 {% endblock %}
+
+{% block javascript %}{% endblock %}

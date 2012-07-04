@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 *~
 *.swp
 *.pyc
-=======
 *.o
-*.pyc
 *.pyo
 .DS\_Store
 *.sw?
 *.egg-info*
->>>>>>> a92008097d87c17a9643474befad3bf7bc3b341c
+static
+*.mo

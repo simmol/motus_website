@@ -14,6 +14,7 @@ TEMPLATE_DEBUG = True
 DEFAULT_FROM_EMAIL = ''
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
+LANGUAGE_CODE = 'bg'
 
 DATABASES = {
     'default': {
@@ -28,18 +29,36 @@ DATABASES = {
 
 INTERNAL_IPS = ('127.0.0.1', )
 
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'utils.middleware.admin_local.AdminLocaleMiddleware',
+    # Uncomment the next line for simple clickjacking protection:
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
 LOCAL_INSTALLED_APPS = (
     'mptt',
     'menus',
     'sekizai',
     'south',
     'tagging',
+    'modeltranslation',
     # Custom
     'blog',
 )
 
-
+gettext = lambda s: s
 LANGUAGES = [
-    ('en-us', 'English'),
     ('bg', 'Bulgarian'),
+    ('en', 'English'),
 ]
+
+ADMIN_LANGUAGE_CODE = 'bg'
+
+MODELTRANSLATION_TRANSLATION_REGISTRY = "newproject.translation"
+

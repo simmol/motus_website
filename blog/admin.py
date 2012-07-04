@@ -1,16 +1,31 @@
-import models
+from django.utils.translation import ugettext as _
 from django.contrib import admin
 
 from blog.models import Post
-from multilingual_model.admin import TranslationInline
 
+from modeltranslation.admin import TranslationAdmin
+
+
+def make_active(modeladmin, request, queryset):
+  queryset.update(is_active=1)
+make_active.short_description = _("Activate the Posts");
 
 ### Admin
-class PostTranslationInline(TranslationInline):
-  model = models.PostTranslation
-
-class PostAdmin(admin.ModelAdmin):
-  inlines = [PostTranslationInline]
+class PostAdmin(TranslationAdmin):
+  list_display = ('title', 'is_active', 'created')
   search_fields = ["title"]
+
+  prepopulated_fields = {"slug": ('title',)}
+  actions = [make_active]
+
+  class Media:
+    js = (
+      '/static/modeltranslation/js/force_jquery.js',
+      'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+      '/static/modeltranslation/js/tabbed_translation_fields.js',
+    )
+    css = {
+      'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+    }
 
 admin.site.register(Post, PostAdmin)

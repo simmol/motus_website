@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load i18n %}
+
 {% spaceless %}
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -47,11 +49,24 @@
             <!--TODO: Django auto class="active"?-->
               <li><a href="{% url index %}">Home</a></li>
               {% if user.is_authenticated %}
-              <li><a href="{# url dashboard #}">Dashboard</a></li>
+              <li><a href="{% url admin:index %}">Admin</a></li>
+              <li><a href="{% url blog %}">Blog</a></li>
               <li><a href="{% url logout %}">Logout</a></li>
               {% else %}
               <li><a href="{% url login %}">Login</a></li>
               {% endif %}
+
+              <li>
+                <form action="/i18n/setlang/" method="post">{% csrf_token %}
+                  <input name="next" type="hidden" value="" />
+                  <select name="language">
+                    {% for lang in LANGUAGES %}
+                      <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
+                    {% endfor %}
+                  </select>
+                  <input type="submit" value="Go" />
+                </form>
+              </li>
             </ul>
             {#{% if user.is_authenticated %}<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>{% endif %}#}
           </div><!--/.nav-collapse -->
