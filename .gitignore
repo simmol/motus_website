@@ -7,4 +7,5 @@
 *.sw?
 *.egg-info*
 static
+media
 *.mo
