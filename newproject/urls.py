@@ -36,6 +36,10 @@ urlpatterns += patterns('blog.views',
   url(r'^blog', 'main', name='blog'),
 )
 
+urlpatterns += patterns('',
+  (r'^photologue/', include('photologue.urls')),
+)
+
 if settings.DEBUG:
     urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',

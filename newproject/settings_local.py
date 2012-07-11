@@ -50,6 +50,7 @@ LOCAL_INSTALLED_APPS = (
     'modeltranslation',
     # Custom
     'blog',
+    'photologue',
 )
 
 gettext = lambda s: s
@@ -58,7 +59,8 @@ LANGUAGES = [
     ('en', 'English'),
 ]
 
-ADMIN_LANGUAGE_CODE = 'bg'
+ADMIN_LANGUAGE_CODE = 'en'
 
 MODELTRANSLATION_TRANSLATION_REGISTRY = "newproject.translation"
 
+PHOTOLOGUE_MAXBLOCK =  1024 * 2 ** 10
