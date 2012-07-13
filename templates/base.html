@@ -68,6 +68,13 @@
                 </form>
               </li>
             </ul>
+            <ul class="nav">{% load menubuilder %}{% menu main_navigation %}
+              {% for item in menuitems %}
+                <li>
+                  <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
+                </li>
+             {% endfor %}
+           </ul>
             {#{% if user.is_authenticated %}<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>{% endif %}#}
           </div><!--/.nav-collapse -->
         </div>

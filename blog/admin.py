@@ -1,13 +1,14 @@
 from django.utils.translation import ugettext as _
 from django.contrib import admin
 
-from blog.models import Post
-
 from modeltranslation.admin import TranslationAdmin
+from imperavi.admin import ImperaviStackedInlineAdmin
 
+from blog.models import Post
 
 def make_active(modeladmin, request, queryset):
   queryset.update(is_active=1)
+
 make_active.short_description = _("Activate the Posts");
 
 ### Admin
