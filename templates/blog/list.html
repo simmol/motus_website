@@ -13,13 +13,13 @@
             {% for post in posts.object_list %}
             <div class="title">
               <a href="{% url post post.slug %}">
-                {{ post.title }}
+                {{ post.title|safe }}
               </a>
             </div>
 
             <ul>
               <div class="time">{{ post.created }}</div>
-              <div class="body">{{ post.body|linebreaks }}</div>
+              <div class="body">{{ post.body|safe }}</div>
             </ul>
             {% endfor %}
         </ul>

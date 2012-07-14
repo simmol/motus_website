@@ -11,12 +11,12 @@
         <!-- Post  -->
         <div id="post">
             <div class="title">
-              {{ post.title }}
+              {{ post.title|safe }}
             </div>
 
             <div>
               <div class="time">{{ post.created }}</div>
-              <div class="body">{{ post.body|linebreaks }}</div>
+              <div class="body">{{ post.body|safe|linebreaks }}</div>
             </div>
         </div>
         <a href="{%url blog %}">Back to all posts</a>

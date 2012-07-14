@@ -41,20 +41,6 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-LOCAL_INSTALLED_APPS = (
-    'mptt',
-    'menus',
-    'sekizai',
-    'south',
-    'tagging',
-    'modeltranslation',
-    # Custom
-    'blog',
-    'photologue',
-    'menu',
-    'imperavi',
-)
-
 gettext = lambda s: s
 LANGUAGES = [
     ('bg', 'Bulgarian'),
@@ -76,3 +62,19 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   "django.contrib.messages.context_processors.messages",
   "django.core.context_processors.request",
 )
+
+LOCAL_INSTALLED_APPS = (
+    'mptt',
+    'menus',
+    'sekizai',
+    'south',
+    'tagging',
+    'modeltranslation',
+    # Custom
+    'blog',
+    'photologue',
+    'menu',
+    'imperavi',
+    'blocks'
+)
+

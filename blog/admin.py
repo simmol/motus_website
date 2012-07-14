@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from modeltranslation.admin import TranslationAdmin
 from imperavi.admin import ImperaviStackedInlineAdmin
+from imperavi.admin import ImperaviAdmin
 
 from blog.models import Post
 
@@ -12,7 +13,7 @@ def make_active(modeladmin, request, queryset):
 make_active.short_description = _("Activate the Posts");
 
 ### Admin
-class PostAdmin(TranslationAdmin):
+class PostAdmin(TranslationAdmin, ImperaviAdmin):
   list_display = ('title', 'is_active', 'created')
   search_fields = ["title"]
 
