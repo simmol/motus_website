@@ -1,0 +1,46 @@
+.HeaderBG, .bodyBG, .contentBG, .menuBar, .MenuHover, .menuSeparator, .footerBG{
+	background: url(sprites.png) no-repeat;
+}
+
+.HeaderBG{
+	background-position: 0 -1px ;
+	width: 110px;
+	height: 110px;
+}
+
+.bodyBG{
+	background-position: 0 -148px ;
+	width: 1200px;
+	height: 1px;
+}
+
+.contentBG{
+	background-position: 0 -197px ;
+	width: 944px;
+	height: 4px;
+}
+
+.menuBar{
+	background-position: 0 -250px ;
+	width: 933px;
+	height: 36px;
+}
+
+.MenuHover{
+	background-position: 0 -316px ;
+	width: 153px;
+	height: 31px;
+}
+
+.menuSeparator{
+	background-position: -49px -410px ;
+	width: 2px;
+	height: 36px;
+}
+
+.footerBG{
+	background-position: 0 -502px ;
+	width: 55px;
+	height: 55px;
+}
+
