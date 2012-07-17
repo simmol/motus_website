@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>Motus homepage</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<link rel="stylesheet" href="js/themes/default/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="js/nivo-slider.css" />
 </head>
 <body>
 	<header id="Header">
 		<div id="Wrapper"> 
+			<h1><a href="" id="Logo"></a></h1>
 		<nav id="mainMenu" class="clear">
 			<ul>
 				<li>
@@ -37,17 +40,94 @@
 		<section id="Content" class="clear">
 
 			<aside id="leftColumn">
-				<div  class="asideBox"></div>
-				<div  class="asideBox"></div>
+				<h3 class="asideTitle">Events</h3>
+				<div  class="asideBox">
+					<ul class="eventList">
+						<li><a href="">Summer camp</a></li>
+						<li><a href="">Instead, a dial spins 
+							to the forecast of the day,
+							showing an icon of clouds.</a>
+						</li>
+						<li><a href="">Instead, a dial spins 
+							to the forecast of the day,
+							showing an icon of clouds.</a>
+						</li>
+						<li><a href="">Instead, a dial spins 
+							to the forecast of the day,
+							showing an icon of clouds.</a>
+						</li>
+					</ul>
+				</div>
+				<h3 class="asideTitle">Gallery</h3>
+				<div  class="asideBox">
+					<div class="slider-wrapper theme-default">
+            			<div id="slider" class="nivoSlider">
+							<img src="photos/king-arthur-sword.jpg" alt="Photo" />
+							<img src="photos/history-of-Viking-swords.jpg" alt="Photo" />
+							<img src="photos/2001-lion-crest-sword.png" alt="Photo" />
+					    </div>
+					</div>
+				</div>
+				<h3 class="asideTitle">Social networks</h3>
 				<div  class="asideBox"></div>
 			</aside>
 			<section id="rightColumn">
-				right column
+				<article class="listedArticle">
+
+					<h2>Heading 2 - Article title</h2>
+					<p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+				</article>
+				<article class="listedArticle">
+
+					<h2>Heading 2 - Article title</h2>
+					<p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+				</article>
+				<article class="listedArticle">
+
+					<h2>Heading 2 - Article title</h2>
+					<p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+				</article>
 			</section>
 
 		</section>
     </div>
-    <footer id="Footer"><div id="Wrapper"> footer</div></footer>
+    <footer id="Footer">
+    	<div id="Wrapper"> 
+    		<nav id="footerNav">
+    			<ul>
+    				<li>
+    					<a href="">Home</a>
+    				</li>
+    				<li>
+    					<a href="">About us</a>
+    				</li>
+    				<li>
+    					<a href="">News</a>
+    				</li>
+    				<li>
+    					<a href="">Services</a>
+    				</li>
+    				<li>
+    					<a href="">Services</a>
+    				</li>
+    			</ul>
+    		</nav>
+    		<p id="copyright">&copy; Motus 2012 All rights reserved</p>
+   		</div>
+    </footer>
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+    <script type="text/javascript">
+
+    $(window).load(function() {
+
+        $('#slider').nivoSlider();
+
+    });
+
+    </script>
 
 </body>
 </html>

@@ -15,7 +15,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/*font: inherit;*/
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -93,10 +93,10 @@ a {
 	float: left;
 }
 #mainMenu a {
-	font-size: 14px;
+	font-size: 17px;
 	color: #fff;
 	font-weight: bold;
-	text-shadow: 1px 1px 0 #000;
+	text-shadow: 2px 2px 0 #000;
 	display: block;
 	padding: 10px 20px 12px 20px;
 	background: url(../images/menuSeparator.png) 100% 0 no-repeat;
@@ -107,15 +107,30 @@ float:  left;
 }
 
 #rightColumn {
-width: 681px;
+width: 640px;
 float: left;
+padding: 20px;
 }
 
 #Footer {
 background: url(../images/footerBG.png) 0 0 repeat;
 height: 65px;
+clear: both;
 }
-
+#footerNav li {
+	float: left;
+}
+#footerNav a, #copyright {
+	font-size: 12px;
+	color: #fff;
+	font-style: italic;
+	text-shadow: 2px 2px 0 #000;
+	display: block;
+	padding: 10px 20px;
+}
+#copyright  {
+	float: right;
+}
 #Wrapper {
 	width: 950px;
 	margin:  0 auto;
@@ -123,23 +138,50 @@ height: 65px;
 
 /*Sidebar Content*/
 .asideBox {
-	width: 255px;
-	height: 225px;
+	width: 239px;
+	height: 215px;
 	background: #f4f2f2;
 	border: solid 1px #d6d6d6;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	margin: 20px 0 20px 5px;
+	margin: 20px 0 20px 6px;
+	padding: 11px 8px;
+}
+
+.asideTitle {
+	font-size: 16px;
+	font-style: italic;;
+	line-height: 18px;
+	padding: 20px 0 10px 10px;
+	
+}
+
+.eventList a {
+	font-size: 12px;
+	line-height: 15px;
+	color: #181819;
+	display: block;
+	padding: 10px 0 0 62px;
+	min-height: 43px;
+	background: url(../images/Calendar.png) 0 50% no-repeat;
+}
+
+/*Right column content*/
+.listedArticle h2 {
+	font-size: 22px;
+	line-height: 18px;
+	padding: 30px 0;
 }
 
 
-
-
-
-
-
-
+.listedArticle p {
+	font-size: 14px;
+	line-height: 18px;
+	width: 650px;
+	padding: 0 0 25px 0;
+	background: url(../images/pargraphSeparator.png) 50% 100% no-repeat;
+}
 
 
 
