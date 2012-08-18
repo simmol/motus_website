@@ -75,6 +75,7 @@ LOCAL_INSTALLED_APPS = (
     'photologue',
     'menu',
     'imperavi',
-    'blocks'
+    'blocks',
+    'siteblocks',
 )
 

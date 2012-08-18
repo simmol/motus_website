@@ -1,18 +1,34 @@
 {% extends "base.html" %}
 
+{% load siteblocks %}
+
 {% block title %}{% endblock %}
 {% block meta_description %}{% endblock %}
 
 {% block extra_head %}{% endblock %}
 
+
 {% block content %}
-<div class="row">
-<div class="span8 offset2 center pad-top5 pad-bottom5">
-<h2>Thanks for using Django Project Builder!</h2>
-<br />
-<p>Feel free to contribute improvements on <a href="https://github.com/prototypemagic/django-projectbuilder">our GitHub page</a></p>
-</div>
-</div>
+  <div class="motus-info-block center">
+    {% siteblock "motus_info" %}
+  </div>
+
+  <article class="listedArticle">
+
+    <h2>Heading 2 - Article title</h2>
+    <p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+  </article>
+  <article class="listedArticle">
+
+    <h2>Heading 2 - Article title</h2>
+    <p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+  </article>
+  <article class="listedArticle">
+
+    <h2>Heading 2 - Article title</h2>
+    <p> One of the things I have found myself needing over and over again as I design websites is "dummy text" or "filler text", that looks like real content, that I can use to fill up a page so it gives the client the feel of a finished page, text and all. Filler text matters because it allows you the designer to get an accurate feel of the balance between design elements and white space, and to see the relative weight of the text on the page, compared to other design elements. I use it all the time.</p>
+  </article>
+
 {% endblock %}
 
 {% block javascript %}{% endblock %}

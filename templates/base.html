@@ -9,118 +9,131 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Motus{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}{% endblock %}" />
-    <meta name="author" content="{% block meta_author %}{% endblock %}"/>
+    <meta name="author" content="{% block meta_author %}Simmol{% endblock %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {# TODO: <link rel="shortcut icon" href="/media/images/favicon.ico" /> #}
-    {# TODO: <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png" /> #}
-    <link type="text/css" rel="stylesheet" href="/media/css/bootstrap.min.css" charset="utf-8">
-    <style>
-      body {
-        padding-top: 60px; /* to make the container go all the way to the bottom of the topbar (It should be 60px) */
+
+    <!-- Motus -->
+    <link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+    <link rel="stylesheet" href="/media/js/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/media/js/nivo-slider.css" />
+    <!-- Motus -->
+
+
+    <!--[if gte IE 9]>
+    <style type="text/css">
+      .gradient {
+        filter: none;
       }
     </style>
-    <link type="text/css" rel="stylesheet" href="/media/css/bootstrap-responsive.min.css" charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="/media/css/style.css" charset="utf-8"/>
-   <!--[if gte IE 9]>
-  <style type="text/css">
-    .gradient {
-       filter: none;
-    }
-  </style>
     <![endif]-->
     {% block extra_head %}{% endblock %}
     <script src="/media/js/modernizr-2.5.3.min.js"></script>
 </head>
 
 <body class="body">
-     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="{% url index %}">Project Name</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-            <!--TODO: Django auto class="active"?-->
-              <li><a href="{% url index %}">Home</a></li>
-              {% if user.is_authenticated %}
-              <li><a href="{% url admin:index %}">Admin</a></li>
-              <li><a href="{% url blog %}">Blog</a></li>
-              <li><a href="{% url logout %}">Logout</a></li>
-              {% else %}
-              <li><a href="{% url login %}">Login</a></li>
-              {% endif %}
-
-              <li>
-                <form action="/i18n/setlang/" method="post">{% csrf_token %}
-                  <input name="next" type="hidden" value="" />
-                  <select name="language">
-                    {% for lang in LANGUAGES %}
-                      <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
-                    {% endfor %}
-                  </select>
-                  <input type="submit" value="Go" />
-                </form>
-              </li>
-            </ul>
-            <ul class="nav">{% load menubuilder %}{% menu main_navigation %}
-              {% for item in menuitems %}
-                <li>
-                  <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
-                </li>
-             {% endfor %}
-           </ul>
-            {#{% if user.is_authenticated %}<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>{% endif %}#}
-          </div><!--/.nav-collapse -->
-        </div>
+  {% if messages %}
+      <div class="span4 center msgs">
+      {% for message in messages %}
+      <h4>{{ message }}</h4>
+      {% endfor %}
       </div>
-    </div>
-    <div class="main" role="main">
-    {% if messages %}
-        <div class="span4 center msgs">
-        {% for message in messages %}
-        <h4>{{ message }}</h4>
-        {% endfor %}
-        </div>
-    {% endif %}
-    <!-- PROMPT IE 6 USERS TO INSTALL CHROME FRAME. REMOVE THIS IF YOU SUPPORT IE 6.
-    chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-    <!--Block Content-->
-    {% block content %}{% endblock %}
-    <!----End Block---->
-        <div class="row">
-        <footer class="center">
-        <hr />
-        <p><a href="{% url index %}">Home</a> | <a href="{# url about #}">About</a> | <a href="{# url contact #}">Contact</a>
-         | {% if user.is_authenticated %} <a href="{% url logout %}">Log Out</a>{% else %}<a href="{% url login %}">Login</a>{% endif %}
-         <br /><br />
-         <b>Powered by: <a href="https://www.djangoproject.com/">Django</a> and <a href="http://twitter.github.com/bootstrap/">Bootstrap</a></b>
-         </footer>
-        </div>
-    </div><!--End of Container-->
-    <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-    <script src="/media/js/bootstrap.min.js"></script>
-    {% block javascript %}{% endblock %}
-    
-    <!-- <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script> -->
+  {% endif %}
+  <!-- PROMPT IE 6 USERS TO INSTALL CHROME FRAME. REMOVE THIS IF YOU SUPPORT IE 6.
+  chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <!--Block Content-->
 
-</body>
+  <header id="Header">
+    <div id="Wrapper">
+      <h1><a href="" id="Logo"></a></h1>
+      <nav id="mainMenu" class="clear">
+        <ul>{% load menubuilder %}{% menu main_navigation %}
+          {% for item in menuitems %}
+            <li>
+              <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="Wrapper">
+    <section id="Content" class="clear">
+      <aside id="leftColumn">
+        <h3 class="asideTitle">Events</h3>
+        <div  class="asideBox">
+          <ul class="eventList">
+            <li><a href="">Summer camp</a></li>
+            <li><a href="">Instead, a dial spins
+              to the forecast of the day,
+              showing an icon of clouds.</a>
+            </li>
+            <li><a href="">Instead, a dial spins
+              to the forecast of the day,
+              showing an icon of clouds.</a>
+            </li>
+            <li><a href="">Instead, a dial spins
+              to the forecast of the day,
+              showing an icon of clouds.</a>
+            </li>
+          </ul>
+        </div>
+        <h3 class="asideTitle">Gallery</h3>
+        <div  class="asideBox">
+          <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+              <img src="/media/photos/king-arthur-sword.jpg" alt="Photo" />
+              <img src="/media/photos/history-of-Viking-swords.jpg" alt="Photo" />
+              <img src="/media/photos/2001-lion-crest-sword.png" alt="Photo" />
+            </div>
+          </div>
+        </div>
+        <h3 class="asideTitle">Social networks</h3>
+        <div  class="asideBox"></div>
+      </aside>
+      <section id="rightColumn">
+        {% block content %} {% endblock%}
+      </section>
+
+    </section>
+    </div>
+    <footer id="Footer">
+      <div id="Wrapper">
+        <nav id="footerNav">
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">About us</a>
+            </li>
+            <li>
+              <a href="">News</a>
+            </li>
+            <li>
+              <a href="">Services</a>
+            </li>
+            <li>
+              <a href="">Services</a>
+            </li>
+          </ul>
+        </nav>
+        <p id="copyright">&copy; Motus 2012 All rights reserved</p>
+      </div>
+    </footer>
+  <script type="text/javascript" src="/media/js/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.nivo.slider.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#slider').nivoSlider();
+    });
+  </script>
+
+  </body>
 {% endspaceless %}
 </html>
 
