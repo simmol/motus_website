@@ -60,7 +60,7 @@ a:hover {
 }
 .clear {
 	clear: both
-}
+	}
 /*a:visited {
 	color: #999;
 }*/
@@ -71,18 +71,18 @@ a {
 /*Layout*/
 
  #Header {
-  background: url(../images/headerBG.png) 0 0 repeat-x;
+  background: url(/media/images/headerBG.png) 0 0 repeat-x;
 	/*width: 110px;*/
 	width: 100%;
 	height: 110px;
  }
 
  #Content {
- background: url(../images/contentBG.png) 0 0 repeat-y;
+ background: url(/media/images/contentBG.png) 0 0 repeat-y;
  min-height: 1000px
  }
 #mainMenu {
-	background: url(../images/sprites.png) no-repeat;
+	background: url(/media/images/sprites.png) no-repeat;
 	background-position: 0 -250px ;
 	height: 36px;
 	position: relative;
@@ -99,7 +99,7 @@ a {
 	text-shadow: 2px 2px 0 #000;
 	display: block;
 	padding: 10px 20px 12px 20px;
-	background: url(../images/menuSeparator.png) 100% 0 no-repeat;
+	background: url(/media/images/menuSeparator.png) 100% 0 no-repeat;
 }
 #leftColumn {
 width: 256px;
@@ -113,7 +113,7 @@ padding: 20px;
 }
 
 #Footer {
-background: url(../images/footerBG.png) 0 0 repeat;
+background: url(/media/images/footerBG.png) 0 0 repeat;
 height: 65px;
 clear: both;
 }
@@ -164,7 +164,7 @@ clear: both;
 	display: block;
 	padding: 10px 0 0 62px;
 	min-height: 43px;
-	background: url(../images/Calendar.png) 0 50% no-repeat;
+	background: url(/media/images/Calendar.png) 0 50% no-repeat;
 }
 
 /*Right column content*/
@@ -180,7 +180,7 @@ clear: both;
 	line-height: 18px;
 	width: 650px;
 	padding: 0 0 25px 0;
-	background: url(../images/pargraphSeparator.png) 50% 100% no-repeat;
+	background: url(/media/images/pargraphSeparator.png) 50% 100% no-repeat;
 }
 
 
