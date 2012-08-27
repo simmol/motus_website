@@ -56,6 +56,17 @@
               <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
             </li>
           {% endfor %}
+          <li>
+            <form action="/i18n/setlang/" method="post">{% csrf_token %}
+              <input name="next" type="hidden" value="" />
+              <select name="language">
+                {% for lang in LANGUAGES %}
+                  <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
+                {% endfor %}
+              </select>
+              <input type="submit" value="Go" />
+            </form>
+          </li>
         </ul>
       </nav>
     </div>
