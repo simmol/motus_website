@@ -6,6 +6,9 @@ from modeltranslation.admin import TranslationAdmin
 from photologue.models import Gallery, Photo
 from photologue.admin import GalleryAdmin, PhotoAdmin
 
+from siteblocks.models import Block
+from siteblocks.admin import BlockAdmin
+
 class MediaTranslation:
   class Media:
     js = (
@@ -23,9 +26,15 @@ class GalleryTranslation(GalleryAdmin, TranslationAdmin, MediaTranslation):
 class PhotoTranslation(PhotoAdmin, TranslationAdmin, MediaTranslation):
   pass
 
+class SiteBlocksTranslation(BlockAdmin, TranslationAdmin, MediaTranslation):
+  pass
+
+
 admin.site.unregister(Gallery)
 admin.site.unregister(Photo)
+admin.site.unregister(Block)
 
 admin.site.register(Gallery, GalleryTranslation)
 admin.site.register(Photo, PhotoTranslation)
+admin.site.register(Block, SiteBlocksTranslation)
 

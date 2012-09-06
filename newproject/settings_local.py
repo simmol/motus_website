@@ -65,7 +65,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 LOCAL_INSTALLED_APPS = (
     'mptt',
-    'menus',
     'sekizai',
     'south',
     'tagging',
@@ -78,3 +77,7 @@ LOCAL_INSTALLED_APPS = (
     'siteblocks',
 )
 
+
+FIXTURE_DIRS = (
+  PROJECT_PATH + '/fixtures/',
+)
