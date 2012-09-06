@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
-  user = models.ForeignKey(User, unique=True)
+  user = models.OneToOneField(User, related_name='userProfile')   
   
   showname = models.BooleanField()
   
@@ -15,7 +15,7 @@ class UserProfile(models.Model):
   
   
   def __unicode__(self):
-    if self.name is None:
+    if self.user.username is None:
       return "None"
     else:
-      return self.name
+      return self.user.username

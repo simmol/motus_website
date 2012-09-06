@@ -1,17 +1,25 @@
 from django.utils.translation import ugettext as _
 from django.contrib import admin
 
+from django.contrib.auth.models import User
+
 from profiles.models import UserProfile
 
 ### Admin
+class UserProfileInline(admin.StackedInline):
+    model = UserProfile
+    
 class ProfileAdmin(admin.ModelAdmin):
-  fieldsets = [
-        (None,               {'fields': ['user', 'showname']}),
-        ('Information',     {'fields': ['avatar', 'desc']}),
-        ('Contact',          {'fields': ['skype', 'telephone','showemail']}),
-  ]
   
-  list_display = ('user', 'showemail')
-  search_fields = ["user"]
+  inlines = [UserProfileInline]
 
-admin.site.register(UserProfile, ProfileAdmin)
+  
+  
+  list_display = ('username', 'first_name', 'showemail')
+  search_fields = ["username"]
+  
+  def showemail(self, instance):
+    return instance.userProfile.showemail
+
+admin.site.unregister(User)
+admin.site.register(User, ProfileAdmin)
