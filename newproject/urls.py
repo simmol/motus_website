@@ -36,6 +36,10 @@ urlpatterns += patterns('blog.views',
   url(r'^blog', 'main', name='blog'),
 )
 
+urlpatterns += patterns('profiles.views',
+  url(r'^user/(?P<user_id>\d)/', 'profile', name='user-id'),
+)
+
 urlpatterns += patterns('',
   (r'^photologue/', include('photologue.urls')),
 )

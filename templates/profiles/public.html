@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="span8 offset2 center pad-top5 pad-bottom5">
+        <!-- Public user profile  -->
+        <div id="post">
+            <div class="name">
+              {{ user.user.first_name|safe }}
+              {{ user.user.last_name|safe }}
+            </div>  
+            <div class="username">
+              {{ user.user.username|safe }}
+            </div>
+
+            <div>
+              <div class="avatar">{{ user.avatar }}</div>
+              <div class="desc">{{ user.desc|safe|linebreaks }}</div>
+              <div class="skype"> {{user.skype|safe}}</div>
+              <div class="telephone"> {{user.telephone|safe}}</div>
+              {% if user.showemail %}
+                <div class="email"> {{user.user.email|safe}}</div>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
