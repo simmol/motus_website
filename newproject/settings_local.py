@@ -75,6 +75,7 @@ LOCAL_INSTALLED_APPS = (
     'menu',
     'imperavi',
     'siteblocks',
+    'pages',
 )
 
 
