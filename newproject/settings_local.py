@@ -49,6 +49,8 @@ LANGUAGES = [
 
 ADMIN_LANGUAGE_CODE = 'en'
 
+AUTH_PROFILE_MODULE = "account.UserProfile"
+
 MODELTRANSLATION_TRANSLATION_REGISTRY = "newproject.translation"
 
 PHOTOLOGUE_MAXBLOCK =  1024 * 2 ** 10
@@ -75,6 +77,7 @@ LOCAL_INSTALLED_APPS = (
     'menu',
     'imperavi',
     'siteblocks',
+    'profiles',
 )
 
 
