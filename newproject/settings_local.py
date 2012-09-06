@@ -49,7 +49,7 @@ LANGUAGES = [
 
 ADMIN_LANGUAGE_CODE = 'en'
 
-AUTH_PROFILE_MODULE = "account.UserProfile"
+AUTH_PROFILE_MODULE = "profiles.UserProfile"
 
 MODELTRANSLATION_TRANSLATION_REGISTRY = "newproject.translation"
 

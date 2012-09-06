@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
   user = models.ForeignKey(User, unique=True)
   
-  name = models.CharField(max_length = 100, blank = True)
   showname = models.BooleanField()
   
   avatar = models.ImageField(upload_to = 'media/users/avatars', blank=True)
@@ -12,6 +11,7 @@ class UserProfile(models.Model):
  
   skype = models.CharField(max_length = 100, blank = True)
   telephone = models.CharField(max_length = 100, blank = True)
+  showemail = models.BooleanField()
   
   
   def __unicode__(self):

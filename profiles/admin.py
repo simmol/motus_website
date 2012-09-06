@@ -5,7 +5,13 @@ from profiles.models import UserProfile
 
 ### Admin
 class ProfileAdmin(admin.ModelAdmin):
-  list_display = ('user', 'name')
+  fieldsets = [
+        (None,               {'fields': ['user', 'showname']}),
+        ('Information',     {'fields': ['avatar', 'desc']}),
+        ('Contact',          {'fields': ['skype', 'telephone','showemail']}),
+  ]
+  
+  list_display = ('user', 'showemail')
   search_fields = ["user"]
 
 admin.site.register(UserProfile, ProfileAdmin)
