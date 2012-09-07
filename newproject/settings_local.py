@@ -71,8 +71,9 @@ LOCAL_INSTALLED_APPS = (
     'south',
     'tagging',
     'modeltranslation',
+    #
+    'blog', #XXX to be removed in the future - at the moment it stay only for the cleanup migration to work
     # Custom
-    'blog',
     'photologue',
     'menu',
     'imperavi',

@@ -4,11 +4,7 @@ from menu.models import MenuItem
 from photologue.models import Gallery, Photo
 
 from siteblocks.models import Block
-from blog.models import Post
 from pages.models import Page, Library, Armory, Event, Blog
-
-class PostTranslationOptions(TranslationOptions):
-  fields = ('title', 'body')
 
 class MenuItemTranslation(TranslationOptions):
   fields = ('title',)
@@ -30,7 +26,6 @@ translator.register(Gallery, GalleryTranslation)
 translator.register(Photo, PhotoTranslation)
 
 translator.register(Block, SiteBlocksTranslation)
-translator.register(Post, PostTranslationOptions)
 
 # Content types
 translator.register(Page, PageTranslationOptions)
