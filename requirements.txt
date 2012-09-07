@@ -5,7 +5,6 @@ Pillow==1.7.7
 South==0.7.5
 django-all-access==0.2.1
 django-classy-tags==0.3.4.1
-django-imperavi==0.2.3
 django-menu==0.1.7
 django-menus==1.0.7
 django-modeltranslation==0.3.3

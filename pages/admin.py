@@ -35,6 +35,15 @@ class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
       'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
     }
 
+  def save_model(self, request, obj, form, change):
+    instance = form.save(commit=False)
+    if not instance.created_by:
+      instance.created_by = request.user
+
+    instance.edited_by = request.user
+    instance.save()
+    form.save_m2m()
+    return instance
 
 class PageAdmin(BasePageAdmin):
 

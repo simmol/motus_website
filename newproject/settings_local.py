@@ -66,22 +66,25 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 LOCAL_INSTALLED_APPS = (
-    'mptt',
-    'sekizai',
-    'south',
-    'tagging',
-    'modeltranslation',
-    #
-    'blog', #XXX to be removed in the future - at the moment it stay only for the cleanup migration to work
-    # Custom
-    'photologue',
-    'menu',
-    'imperavi',
-    'siteblocks',
-    'pages',
-    'profiles',
+  'mptt',
+  'sekizai',
+  'south',
+  'tagging',
+  'modeltranslation',
+  #
+  'blog', #XXX to be removed in the future - at the moment it stay only for the cleanup migration to work
+  # Custom
+  'photologue',
+  'menu',
+  'imperavi',
+  'siteblocks',
+  'pages',
+  'profiles',
 )
 
+IMPERAVI_CUSTOM_SETTINGS = {
+  'lang': 'en',
+}
 
 FIXTURE_DIRS = (
   PROJECT_PATH + '/fixtures/',

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class PageManager(models.Manager):
 
@@ -22,10 +23,13 @@ class Page(models.Model):
   title = models.CharField(max_length=60,  blank=True, null=True)
   slug  = models.SlugField()
 
-
   body  = models.TextField()
 
+  created_by = models.ForeignKey(User, related_name='created_by', null=True, blank=True)
+  edited_by  = models.ForeignKey(User, related_name='edited_by', null=True, blank=True)
+  edited  = models.DateTimeField(auto_now = True, null=True)
   created = models.DateTimeField(auto_now_add=True)
+
   is_active = models.BooleanField()
 
   objects = models.Manager()
