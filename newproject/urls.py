@@ -3,8 +3,6 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.conf import settings
 
-import blog
-
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -29,12 +27,6 @@ urlpatterns = patterns('',
 #urlpatterns += patterns('',
 #    url(r'', include('feincms.urls')),
 #)
-
-urlpatterns += patterns('blog.views',
-  url(r'^blog/post/(?P<post_slug>[a-z\-0-9]*)/', 'post', name='post'),
-  url(r'^blog/post/(?P<post_id>\d)/', 'post', name='post-id'),
-  url(r'^blog', 'main', name='blog'),
-)
 
 urlpatterns += patterns('profiles.views',
   url(r'^user/(?P<user_id>\d)/', 'profile', name='user-id'),
