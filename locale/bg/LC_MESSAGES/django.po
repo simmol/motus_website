@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-04 22:30+0300\n"
+"POT-Creation-Date: 2012-09-11 01:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: blog/admin.py:11
+#: newproject/settings.py:45 newproject/settings_local.py:46
+msgid "Bulgarian"
+msgstr ""
+
+#: newproject/settings.py:46 newproject/settings_local.py:47
+msgid "English"
+msgstr ""
+
+#: pages/admin.py:16
 #, fuzzy
 msgid "Activate the Posts"
 msgstr "Активирайте Постовете"
+
+#: pages/admin.py:17
+#, fuzzy
+msgid "Deactivate the Posts"
+msgstr "Активирайте Постовете"
+
+#: siteblocks/models.py:6
+msgid "Alias"
+msgstr ""
+
+#: siteblocks/models.py:6
+msgid "Short name to address this block from a template."
+msgstr ""
+
+#: siteblocks/models.py:7
+msgid "Description"
+msgstr ""
+
+#: siteblocks/models.py:7
+msgid "Short memo for this block."
+msgstr ""
+
+#: siteblocks/models.py:8
+msgid "URL"
+msgstr ""
+
+#: siteblocks/models.py:8
+msgid ""
+"Page URL this block is related to. Regular expressions supported (e.g.: \"/"
+"news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL alias:</"
+"b> \"*\" &#8212; every page."
+msgstr ""
+
+#: siteblocks/models.py:9
+msgid "Contents"
+msgstr ""
+
+#: siteblocks/models.py:9
+msgid "Block contents to render in a template."
+msgstr ""
+
+#: siteblocks/models.py:10
+msgid "Hidden"
+msgstr ""
+
+#: siteblocks/models.py:10
+msgid "Whether to show this block when requested."
+msgstr ""
+
+#: siteblocks/models.py:13
+msgid "Site Block"
+msgstr ""
+
+#: siteblocks/models.py:14
+msgid "Site Blocks"
+msgstr ""
+
+#: templates/pages/article.html:14
+msgid "author"
+msgstr "автор"

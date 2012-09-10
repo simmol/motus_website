@@ -6,7 +6,7 @@
 # hosting svn repository.
 
 import os
-PROJECT_PATH = os.path.dirname(__file__)
+PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -15,6 +15,15 @@ DEFAULT_FROM_EMAIL = ''
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 LANGUAGE_CODE = 'bg'
+
+ADMIN_LANGUAGE_CODE = 'en'
+
+gettext = lambda s: s
+LANGUAGES = [
+    ('bg', gettext('Bulgarian')),
+    ('en', gettext('English')),
+]
+
 
 DATABASES = {
     'default': {
@@ -40,14 +49,6 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
-gettext = lambda s: s
-LANGUAGES = [
-    ('bg', 'Bulgarian'),
-    ('en', 'English'),
-]
-
-ADMIN_LANGUAGE_CODE = 'en'
 
 AUTH_PROFILE_MODULE = "profiles.UserProfile"
 
@@ -80,6 +81,7 @@ LOCAL_INSTALLED_APPS = (
   'siteblocks',
   'pages',
   'profiles',
+  'rosetta',
 )
 
 IMPERAVI_CUSTOM_SETTINGS = {
@@ -88,4 +90,8 @@ IMPERAVI_CUSTOM_SETTINGS = {
 
 FIXTURE_DIRS = (
   PROJECT_PATH + '/fixtures/',
+)
+
+LOCALE_PATHS = ( 
+  os.path.join(PROJECT_PATH, 'locale/'),
 )
