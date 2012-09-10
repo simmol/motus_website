@@ -1,0 +1,15 @@
+{% extends "pages/root.html" %}
+{% load i18n %}
+
+{% block page-title %}
+  {{ page.title }}
+{% endblock %}
+
+
+{% block page-body %}
+  {{ page.body|safe }}
+{% endblock %}
+
+{% block page-footer %}
+  <span class="author-label">{% trans 'author' %}</span>: <span class="author"> {{ page.created_by.get_full_name }} </span>
+{% endblock %}
