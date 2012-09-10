@@ -2,28 +2,29 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-11 01:20+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-09-11 01:51\n"
+"Last-Translator: Pavlin Angelov <fonix.simmol@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
 
 #: newproject/settings.py:45 newproject/settings_local.py:46
 msgid "Bulgarian"
-msgstr ""
+msgstr "Български"
 
 #: newproject/settings.py:46 newproject/settings_local.py:47
 msgid "English"
-msgstr ""
+msgstr "Английски"
 
 #: pages/admin.py:16
 #, fuzzy
@@ -37,7 +38,7 @@ msgstr "Активирайте Постовете"
 
 #: siteblocks/models.py:6
 msgid "Alias"
-msgstr ""
+msgstr "Псевдоним"
 
 #: siteblocks/models.py:6
 msgid "Short name to address this block from a template."
@@ -45,7 +46,7 @@ msgstr ""
 
 #: siteblocks/models.py:7
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: siteblocks/models.py:7
 msgid "Short memo for this block."
@@ -57,14 +58,14 @@ msgstr ""
 
 #: siteblocks/models.py:8
 msgid ""
-"Page URL this block is related to. Regular expressions supported (e.g.: \"/"
-"news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL alias:</"
-"b> \"*\" &#8212; every page."
+"Page URL this block is related to. Regular expressions supported (e.g.: "
+"\"/news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL "
+"alias:</b> \"*\" &#8212; every page."
 msgstr ""
 
 #: siteblocks/models.py:9
 msgid "Contents"
-msgstr ""
+msgstr "Съдържание"
 
 #: siteblocks/models.py:9
 msgid "Block contents to render in a template."
@@ -72,7 +73,7 @@ msgstr ""
 
 #: siteblocks/models.py:10
 msgid "Hidden"
-msgstr ""
+msgstr "Скрито"
 
 #: siteblocks/models.py:10
 msgid "Whether to show this block when requested."
@@ -88,4 +89,4 @@ msgstr ""
 
 #: templates/pages/article.html:14
 msgid "author"
-msgstr "автор"
+msgstr "Автор"

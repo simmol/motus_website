@@ -6,44 +6,42 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-
-    #Admin
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/', include(admin.site.urls)),
     (r'^i18n/', include('django.conf.urls.i18n')),
-
-    #App url include
-    url(r'^', include('newproject_app.appurls')),
-    #url(r'^newproject/$', include('newproject.appurls')),
-
-    #Static Links
-#    url(r'^', TemplateView.as_view(template_name='home.html'), name='home'),
 )
 
-#urlpatterns += patterns('newproject_site.newproject.views',
-#   url(r'^newproject/$', 'newproject_view', name='newproject'),
-#)
+if 'rosetta' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('',
+    url(r'^admin/translation/', include('rosetta.urls')),
+  )
 
-#urlpatterns += patterns('',
-#    url(r'', include('feincms.urls')),
-#)
+if 'pages' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('', 
+    (r'^', include('pages.urls'))
+  )
 
-urlpatterns += patterns('profiles.views',
-  url(r'^user/(?P<user_id>\d)/', 'profile', name='user-id'),
+if 'profiles' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('profiles.views',
+    url(r'^user/(?P<user_id>\d)/', 'profile', name='user-id'),
+  )
+
+if 'photologue' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('',
+    (r'^photologue/', include('photologue.urls')),
+  )
+
+if 'imperavi' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('',
+    (r'^imperavi/', include('imperavi.urls')),
+  )
+
+urlpatterns += patterns('', 
+  (r'^admin/', include(admin.site.urls)),
+  url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
-
-urlpatterns += patterns('',
-  (r'^photologue/', include('photologue.urls')),
-)
-
-urlpatterns += patterns('',
-  (r'^imperavi/', include('imperavi.urls')),
-)
-
 if settings.DEBUG:
-    urlpatterns = patterns('',
+  urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
     url(r'', include('django.contrib.staticfiles.urls')),
-) + urlpatterns
+  ) + urlpatterns
 
