@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+
 from django.contrib.auth.models import User
 
 class PageManager(models.Manager):
@@ -8,23 +10,28 @@ class PageManager(models.Manager):
     return qs.filter(is_active=True)
 
 class Category(models.Model):
-  pass
+  CONTENT_TYPES = settings.CONTENT_TYPES
+  content_type = models.CharField(max_length = 3, choices = CONTENT_TYPES, default = 'SYS', editable=True)
+  title = models.CharField(max_length=60,  blank=True, null=True)
+  slug  = models.SlugField()
+
+  def __unicode__(self):
+    if self.title is None:
+      return "None"
+    else:
+      return self.title
 
 class Page(models.Model):
+  CONTENT_TYPES = settings.CONTENT_TYPES
   #TODO move content_types to settings_local.py
-  CONTENT_TYPES = (
-    ('SYS', 'system'),
-    ('LIB', 'library'),
-    ('ARM', 'armory'),
-    ('EVE', 'events'),
-    ('BLG', 'blog'),
-  )
 
   # System field for holding different content type
   content_type = models.CharField(max_length = 3, choices = CONTENT_TYPES, default = 'SYS', editable= False)
 
   title = models.CharField(max_length=60,  blank=True, null=True)
   slug  = models.SlugField()
+
+  category = models.ForeignKey(Category, related_name='category', null=True)
 
   body  = models.TextField()
 

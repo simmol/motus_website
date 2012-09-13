@@ -2,10 +2,9 @@ from django.utils.translation import ugettext as _
 from django.contrib import admin
 
 from modeltranslation.admin import TranslationAdmin
-from imperavi.admin import ImperaviStackedInlineAdmin
 from imperavi.admin import ImperaviAdmin
 
-from pages.models import Page, Library, Armory, Event, Blog
+from pages.models import Page, Library, Armory, Event, Blog, Category
 
 def make_active(modeladmin, request, queryset):
   queryset.update(is_active=1)
@@ -45,11 +44,30 @@ class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
     form.save_m2m()
     return instance
 
-class PageAdmin(BasePageAdmin):
 
+class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
+  list_display = ('title', 'slug', 'content_type')
+  search_fields = ["title", 'content_type']
+
+  list_filter = ('content_type',)
+  prepopulated_fields = {"slug": ('title',)}
+
+  class Media:
+    js = (
+      '/static/modeltranslation/js/force_jquery.js',
+      'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+      '/static/modeltranslation/js/tabbed_translation_fields.js',
+    )
+    css = {
+      'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+    }
+
+
+class PageAdmin(BasePageAdmin):
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
     qs = super(PageAdmin, self).queryset(request)
+
     return qs.filter(content_type='SYS')
 
 
@@ -92,3 +110,5 @@ admin.site.register(Library, LibraryAdmin)
 admin.site.register(Armory, ArmoryAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Blog, BlogAdmin)
+
+admin.site.register(Category, BaseCategoryAdmin)

@@ -95,3 +95,13 @@ FIXTURE_DIRS = (
 LOCALE_PATHS = ( 
   os.path.join(PROJECT_PATH, 'locale/'),
 )
+
+
+CONTENT_TYPES = (
+  ('SYS', 'system'),
+  ('LIB', 'library'),
+  ('ARM', 'armory'),
+  ('EVE', 'events'),
+  ('BLG', 'blog'),
+)
+
