@@ -46,34 +46,35 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <!--Block Content-->
 
-  <header id="Header">
-    <div id="Wrapper">
-      <h1><a href="" id="Logo"></a></h1>
-      <nav id="mainMenu" class="clear">
-        <ul>{% load menubuilder %}{% menu main_navigation %}
-          {% for item in menuitems %}
-            <li>
-              <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
-            </li>
-          {% endfor %}
-          <li>
-            <form action="/i18n/setlang/" method="post">{% csrf_token %}
-              <input name="next" type="hidden" value="" />
-              <select name="language">
-                {% for lang in LANGUAGES %}
-                  <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
-                {% endfor %}
-              </select>
-              <input type="submit" value="Go" />
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
   <div id="Wrapper">
-    <section id="Content" class="clear">
+      <header id="Header">
+
+          <h1><a href="" id="Logo"></a></h1>
+
+      </header>
+      <nav id="mainMenu" class="clear">
+          <ul>{% load menubuilder %}{% menu main_navigation %}
+              {% for item in menuitems %}
+              <li>
+                  <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
+              </li>
+              {% endfor %}
+              <li>
+                  <form action="/i18n/setlang/" method="post">{% csrf_token %}
+                      <input name="next" type="hidden" value="" />
+                      <select name="language">
+                          {% for lang in LANGUAGES %}
+                          <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
+                          {% endfor %}
+                      </select>
+                      <input type="submit" value="Go" />
+                  </form>
+              </li>
+          </ul>
+      </nav>
+
+      <section id="Content" class="clear">
       <aside id="leftColumn">
         <h3 class="asideTitle">Events</h3>
         <div  class="asideBox">
@@ -110,32 +111,33 @@
         {% block content %} {% endblock%}
       </section>
 
-    </section>
-    </div>
-    <footer id="Footer">
-      <div id="Wrapper">
-        <nav id="footerNav">
-          <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">About us</a>
-            </li>
-            <li>
-              <a href="">News</a>
-            </li>
-            <li>
-              <a href="">Services</a>
-            </li>
-            <li>
-              <a href="">Services</a>
-            </li>
-          </ul>
-        </nav>
-        <p id="copyright">&copy; Motus 2012 All rights reserved</p>
-      </div>
-    </footer>
+  </section>
+      <footer id="Footer">
+
+          <nav id="footerNav">
+              <ul>
+                  <li>
+                      <a href="">Home</a>
+                  </li>
+                  <li>
+                      <a href="">About us</a>
+                  </li>
+                  <li>
+                      <a href="">News</a>
+                  </li>
+                  <li>
+                      <a href="">Services</a>
+                  </li>
+                  <li>
+                      <a href="">Services</a>
+                  </li>
+              </ul>
+          </nav>
+          <p id="copyright">&copy; Motus 2012 All rights reserved</p>
+
+      </footer>
+  </div>
+
   <script type="text/javascript" src="/media/js/jquery-1.7.2.js"></script>
   <script type="text/javascript" src="/media/js/jquery.nivo.slider.js"></script>
   <script type="text/javascript">
