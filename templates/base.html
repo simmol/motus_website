@@ -50,12 +50,9 @@
     <div id="Wrapper">
       <h1><a href="" id="Logo"></a></h1>
       <nav id="mainMenu" class="clear">
-        <ul>{% load menubuilder %}{% menu main_navigation %}
-          {% for item in menuitems %}
-            <li>
-              <a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a>
-            </li>
-          {% endfor %}
+        {% load tree_menu_tags %}
+        {% show_menu "Main Navigation" "ordered-list" %}
+        <ul>
           <li>
             <form action="/i18n/setlang/" method="post">{% csrf_token %}
               <input name="next" type="hidden" value="" />

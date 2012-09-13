@@ -76,12 +76,12 @@ LOCAL_INSTALLED_APPS = (
   'blog', #XXX to be removed in the future - at the moment it stay only for the cleanup migration to work
   # Custom
   'photologue',
-  'menu',
   'imperavi',
   'siteblocks',
   'pages',
   'profiles',
   'rosetta',
+  'treemenus',
 )
 
 IMPERAVI_CUSTOM_SETTINGS = {
