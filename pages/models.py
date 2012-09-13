@@ -7,8 +7,11 @@ class PageManager(models.Manager):
     qs = super(PageManager, self).get_query_set()
     return qs.filter(is_active=True)
 
+class Category(models.Model):
+  pass
 
 class Page(models.Model):
+  #TODO move content_types to settings_local.py
   CONTENT_TYPES = (
     ('SYS', 'system'),
     ('LIB', 'library'),

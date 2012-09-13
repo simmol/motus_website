@@ -46,9 +46,13 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <!--Block Content-->
 
-  <header id="Header">
-    <div id="Wrapper">
-      <h1><a href="" id="Logo"></a></h1>
+
+  <div id="Wrapper">
+      <header id="Header">
+
+          <h1><a href="" id="Logo"></a></h1>
+
+      </header>
       <nav id="mainMenu" class="clear">
         {% load tree_menu_tags %}
         {% show_menu "Main Navigation" "ordered-list" %}
@@ -66,11 +70,8 @@
           </li>
         </ul>
       </nav>
-    </div>
-  </header>
 
-  <div id="Wrapper">
-    <section id="Content" class="clear">
+      <section id="Content" class="clear">
       <aside id="leftColumn">
         <h3 class="asideTitle">Events</h3>
         <div  class="asideBox">
@@ -107,32 +108,33 @@
         {% block content %} {% endblock%}
       </section>
 
-    </section>
-    </div>
-    <footer id="Footer">
-      <div id="Wrapper">
-        <nav id="footerNav">
-          <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">About us</a>
-            </li>
-            <li>
-              <a href="">News</a>
-            </li>
-            <li>
-              <a href="">Services</a>
-            </li>
-            <li>
-              <a href="">Services</a>
-            </li>
-          </ul>
-        </nav>
-        <p id="copyright">&copy; Motus 2012 All rights reserved</p>
-      </div>
-    </footer>
+  </section>
+      <footer id="Footer">
+
+          <nav id="footerNav">
+              <ul>
+                  <li>
+                      <a href="">Home</a>
+                  </li>
+                  <li>
+                      <a href="">About us</a>
+                  </li>
+                  <li>
+                      <a href="">News</a>
+                  </li>
+                  <li>
+                      <a href="">Services</a>
+                  </li>
+                  <li>
+                      <a href="">Services</a>
+                  </li>
+              </ul>
+          </nav>
+          <p id="copyright">&copy; Motus 2012 All rights reserved</p>
+
+      </footer>
+  </div>
+
   <script type="text/javascript" src="/media/js/jquery-1.7.2.js"></script>
   <script type="text/javascript" src="/media/js/jquery.nivo.slider.js"></script>
   <script type="text/javascript">
