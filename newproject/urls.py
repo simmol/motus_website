@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^', include('newproject_app.appurls')),
 )
 
 if 'rosetta' in settings.INSTALLED_APPS:
