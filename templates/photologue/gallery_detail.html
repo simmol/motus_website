@@ -9,7 +9,7 @@
 {% if object.description %}<p>{{ object.description }}</p>{% endif %}
 <div class="photo-gallery">
     {% for photo in object.public %}
-    <div class="gallery-photo">
+    <div class="gallery-photo {% if forloop.counter|divisibleby:3 %} noMargin{% endif %}" >
         <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
     </div>
     {% endfor %}
