@@ -73,7 +73,6 @@ LOCAL_INSTALLED_APPS = (
   'tagging',
   'modeltranslation',
   #
-  'blog', #XXX to be removed in the future - at the moment it stay only for the cleanup migration to work
   # Custom
   'photologue',
   'imperavi',
@@ -95,3 +94,13 @@ FIXTURE_DIRS = (
 LOCALE_PATHS = ( 
   os.path.join(PROJECT_PATH, 'locale/'),
 )
+
+
+CONTENT_TYPES = (
+  ('SYS', 'system'),
+  ('LIB', 'library'),
+  ('ARM', 'armory'),
+  ('EVE', 'events'),
+  ('BLG', 'blog'),
+)
+

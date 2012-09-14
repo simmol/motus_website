@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h2 class="page-title">
+    {% block page-title %}
+    {% endblock %}
+  </h2>
 
-<h2 class="page-title">
-  {% block page-title %}
-  {% endblock %}
-</h2>
+  <div class="page-info">
+    {% block page-info %}
+    {% endblock %}
+  </div>
 
-<div class="page-body">
-  {% block page-body %}
-  {% endblock %}
-</div>
+  <div class="page-body">
+    {% block page-body %}
+    {% endblock %}
+  </div>
 
-<div class="page-footer">
-  {% block page-footer %}
-  {% endblock %}
-</div>
+  <div class="page-footer">
+    {% block page-footer %}
+    {% endblock %}
+  </div>
 {% endblock %}

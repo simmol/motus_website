@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+  <h2 class="category-title">
+    {% block category-title %}
+    {% endblock %}
+  </h2>
+  <div class="category-pages">
+    {% block category-items %}
+    {% endblock %}
+  </div>
+
+  {% block category-paginator %}
+  {% endblock %}
+{% endblock %}
+
+

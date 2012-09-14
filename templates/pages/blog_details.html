@@ -1,0 +1,26 @@
+{% extends "pages/root.html" %}
+{% load i18n %}
+
+{% block page-title %}
+  {{ page.title }}
+{% endblock %}
+
+{% block page-info %}
+  {% if page.category %}
+    <div clas="page-category">
+      <label class="page-category-title" for="page-category-title">{%trans 'Category' %}</label>: <span name="page-category-title" class="page-category-title">{{ page.category.title}}</span>
+    </div>
+  {% endif %}
+
+  <div class="page-created">
+    {{ page.created }}
+  </div>
+{% endblock %}
+
+{% block page-body %}
+  {{ page.body|safe }}
+{% endblock %}
+
+{% block page-footer %}
+  <label class="author" for="author">{% trans 'author' %}</label>: <span name="author" class="author"> {{ page.created_by.get_full_name }} </span>
+{% endblock %}

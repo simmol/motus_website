@@ -1,0 +1,41 @@
+{% extends 'pages/category_root.html' %}
+{% load i18n %}
+
+{% block category-title %}
+  {{ category.title }}
+{% endblock %}
+
+{% block category-items %}
+  {% for page in pages %}
+    <div class="category-item">
+      <div class="item-title"> {{ page.title }}</div>
+      <div class="item-created"> {{ page.created }} </div>
+      <div class="item-author"> {{ page.created_by.get_full_name }} </div>
+
+      <div class="item-body">
+        {{ page.body|striptags|safe|slice:":255"}}
+      </div>
+    </div>
+  {% empty %}
+    {% trans  'There are no articles in this category' %}
+  {% endfor %}
+{% endblock %}
+
+{% block category-paginator %}
+  <div class="pagination">
+    <span class="step-links">
+      {% if pages.has_previous %}
+        <a href="?page={{ pages.previous_page_number }}"> {%trans 'Previous' %}</a>
+      {% endif %}
+
+      <span class="current">
+        {%trans 'Page' %} {{ pages.number }} {%trans 'of' %} {{ pages.paginator.num_pages }}.
+      </span>
+
+      {% if pages.has_next %}
+        <a href="?page={{ pages.next_page_number }}">{%trans 'Next' %}</a>
+      {% endif %}
+    </span>
+  </div> 
+{% endblock %}
+
