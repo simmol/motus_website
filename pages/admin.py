@@ -18,7 +18,7 @@ make_unactive.short_description = _('Deactivate the Posts');
 
 
 class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
-  list_display = ('title', 'slug', 'is_active', 'created')
+  list_display = ('title', 'slug', 'is_active', 'category', 'created')
   search_fields = ["title"]
 
   prepopulated_fields = {"slug": ('title',)}
