@@ -64,6 +64,11 @@ class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
 
 
 class PageAdmin(BasePageAdmin):
+  def formfield_for_foreignkey(self, db_field, request, **kwargs):
+    if db_field.name == "category":
+      kwargs["queryset"] = Category.objects.filter(content_type='SYS')
+      return super(PageAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
+
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
     qs = super(PageAdmin, self).queryset(request)
@@ -73,6 +78,10 @@ class PageAdmin(BasePageAdmin):
 
 
 class LibraryAdmin(BasePageAdmin):
+  def formfield_for_foreignkey(self, db_field, request, **kwargs):
+    if db_field.name == "category":
+      kwargs["queryset"] = Category.objects.filter(content_type='LIB')
+      return super(LibraryAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
@@ -81,6 +90,10 @@ class LibraryAdmin(BasePageAdmin):
     return qs.filter(content_type='LIB')
 
 class ArmoryAdmin(BasePageAdmin):
+  def formfield_for_foreignkey(self, db_field, request, **kwargs):
+    if db_field.name == "category":
+      kwargs["queryset"] = Category.objects.filter(content_type='ARM')
+      return super(ArmoryAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
@@ -89,6 +102,10 @@ class ArmoryAdmin(BasePageAdmin):
     return qs.filter(content_type='ARM')
 
 class EventAdmin(BasePageAdmin):
+  def formfield_for_foreignkey(self, db_field, request, **kwargs):
+    if db_field.name == "category":
+      kwargs["queryset"] = Category.objects.filter(content_type='EVE')
+      return super(EventAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
@@ -97,6 +114,10 @@ class EventAdmin(BasePageAdmin):
     return qs.filter(content_type='EVE')
 
 class BlogAdmin(BasePageAdmin):
+  def formfield_for_foreignkey(self, db_field, request, **kwargs):
+    if db_field.name == "category":
+      kwargs["queryset"] = Category.objects.filter(content_type='BLG')
+      return super(BlogAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
   # Overriding the query set so we show only the LIB records
   def queryset(self, request):
