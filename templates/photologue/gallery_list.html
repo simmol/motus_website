@@ -4,11 +4,11 @@
 
 {% block content %}
 
-  <h1>All galleries</h1>
+  <h2 class="mainGallery">All galleries</h2>
 
   {% for gallery in object_list %}
     <div class="photo-gallery">
-      <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+      <h3 class="galleryTitle"><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
       {% for photo in gallery.sample|slice:":1" %}
         <div class="gallery-photo">
           <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>

@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<h1>{{ object.title }}</h1>
-<h2>Originally published {{ object.date_added|date:"l, F jS, Y" }}</h2>
+<h2>{{ object.title }}</h2>
+<h3>Originally published {{ object.date_added|date:"l, F jS, Y" }}</h3>
 {% if object.description %}<p>{{ object.description }}</p>{% endif %}
 <div class="photo-gallery">
     {% for photo in object.public %}

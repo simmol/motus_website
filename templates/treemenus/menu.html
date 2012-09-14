@@ -8,9 +8,10 @@
 	</ul>
 {% endifequal %}
 {% ifequal menu_type "ordered-list" %}
-	<ol>
+	<ul class="parentMenu">
 		{% for menu_item in menu.root_item.children %}
 			{% show_menu_item menu_item %}
 		{% endfor %}
-	</ol>
+        <div class="clear"></div>
+	</ul><!--Unordered list markup optimization-->
 {% endifequal %}
