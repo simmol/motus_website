@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+  <div class="video_details">
+    
+    <div class="video-title">
+      {{ video.title|safe }}
+    </div> 
+    <div class="embeded-video">
+      <iframe width="560" height="315" 
+              src="http://www.youtube.com/embed/{{video.embedUrl}}" 
+              frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class ="video-created">
+      {{ video.created}}
+    </div>
+    <div class="video-description">
+      {{ video.description|safe }}
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}

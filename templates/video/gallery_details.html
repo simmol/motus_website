@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+  <div class="video-gallery">
+
+    <div class="gallery-title">
+      {{ gallery_details.title }}
+    </div> 
+    
+    <div class="gallery-items">
+    {% for video in gallery_details.get_videos %}
+      <div class="gallery-item">
+        
+        <div class="gallery-item-thumbnail">
+          <a href="{% url video.views.video_details video.slug %}">
+            <img src="{{ video.get_thumbnail }}" alt="{{ video.title }}" width="120" height="90" />
+          </a>
+        </div>
+        <div class="gallery-item-title"> 
+          <a href="{% url video.views.video_details video.slug %}">
+            {{ video.title|safe }}
+          </a>
+        </div>    
+      </div>
+    {% endfor %}
+    </div>
+
+    <div class="description">
+      {{ gallery_details.description|safe }}
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}

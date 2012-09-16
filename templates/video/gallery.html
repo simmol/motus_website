@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+{% block meta_description %}{% endblock %}
+
+{% block extra_head %}{% endblock %}
+
+{% block content %}
+  <div class="video-galleries-list">
+
+    <div class="gallery-list">
+      {% for gallery in galleries %}
+        
+        <div class="gallery-list-thumbnail">
+          <a href="{% url video.views.gallery_details gallery.slug %}">
+            <img src="{{ gallery.gallery_thumbnail }}" alt="{{ gallery.title }}" width="120" height="90" />
+          </a>
+        </div>
+        
+        <div class="gallery-list-title">
+          <a href="{% url video.views.gallery_details gallery.slug %}">
+            {{gallery.title}}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+
+{% endblock %}
+
+{% block javascript %}{% endblock %}
