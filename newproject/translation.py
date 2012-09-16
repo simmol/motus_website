@@ -1,7 +1,7 @@
 from modeltranslation.translator import translator, TranslationOptions
 from photologue.models import Gallery, Photo
 from siteblocks.models import Block
-from video.models import Video
+from video.models import Video, VideoGallery
 
 from treemenus.models import MenuItem
 from pages.models import Page, Library, Armory, Event, Blog, Category
@@ -24,6 +24,9 @@ class SiteBlocksTranslation(TranslationOptions):
 class VideoTranslation(TranslationOptions):
   fields = ('title', 'description')
 
+class VideoGalleryTranslation(TranslationOptions):
+  fields = ('title', 'description')
+
 class PageTranslationOptions(TranslationOptions):
   fields = ('title', 'body')
 
@@ -38,6 +41,7 @@ translator.register(Gallery, GalleryTranslation)
 translator.register(Photo, PhotoTranslation)
 translator.register(Block, SiteBlocksTranslation)
 translator.register(Video, VideoTranslation)
+translator.register(VideoGallery, VideoGalleryTranslation)
 
 
 

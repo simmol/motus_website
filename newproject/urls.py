@@ -34,6 +34,11 @@ if 'imperavi' in settings.INSTALLED_APPS:
   urlpatterns += patterns('',
     (r'^imperavi/', include('imperavi.urls')),
   )
+  
+if 'video' in settings.INSTALLED_APPS:
+  urlpatterns += patterns('',
+    (r'^video/', include('video.urls')),
+  )
 
 urlpatterns += patterns('', 
   (r'^admin/', include(admin.site.urls)),
