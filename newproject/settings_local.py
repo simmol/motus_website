@@ -81,6 +81,7 @@ LOCAL_INSTALLED_APPS = (
   'profiles',
   'rosetta',
   'treemenus',
+  'video',
 )
 
 IMPERAVI_CUSTOM_SETTINGS = {
