@@ -7,7 +7,6 @@ from pages.models import Event
 APP_LABEL = 'pages'
 
 def upcomming_events( context):
-
   events = Event.upcomming_events()
 
   context['events'] = events

@@ -1,7 +1,9 @@
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.conf import settings
 
 from django.contrib.auth.models import User
+from datetime import datetime, date
 
 class PageManager(models.Manager):
 
@@ -14,6 +16,10 @@ class Category(models.Model):
   content_type = models.CharField(max_length = 3, choices = CONTENT_TYPES, default = 'SYS', editable=True)
   title = models.CharField(max_length=60,  blank=True, null=True)
   slug  = models.SlugField()
+
+  class Meta:
+    verbose_name = _('Category')
+    verbose_name_plural = _('Categories')
 
   def __unicode__(self):
     if self.title is None:
@@ -31,19 +37,28 @@ class Page(models.Model):
   title = models.CharField(max_length=60,  blank=True, null=True)
   slug  = models.SlugField()
 
-  category = models.ForeignKey(Category, related_name='category', null=True, blank=True)
+  category  = models.ForeignKey(Category, related_name='category', null=True, blank=True)
+  body      = models.TextField()
 
-  body  = models.TextField()
+  created_by  = models.ForeignKey(User, related_name='created_by', null=True, blank=True)
+  edited_by   = models.ForeignKey(User, related_name='edited_by', null=True, blank=True)
+  edited      = models.DateTimeField(auto_now = True, null=True)
+  created     = models.DateTimeField(auto_now_add=True)
+  published   = models.DateTimeField(null=True, blank=True)
 
-  created_by = models.ForeignKey(User, related_name='created_by', null=True, blank=True)
-  edited_by  = models.ForeignKey(User, related_name='edited_by', null=True, blank=True)
-  edited  = models.DateTimeField(auto_now = True, null=True)
-  created = models.DateTimeField(auto_now_add=True)
+  # Event
+  event_start = models.DateTimeField(null=True)
+  event_end   = models.DateTimeField(null=True, editable=True)
 
   is_active = models.BooleanField()
 
   objects = models.Manager()
   active_objects = PageManager()
+
+  def save(self, *args, **kwargs):
+    if self.is_active == True :
+      self.published = datetime.now()
+    super(Page, self).save(*args, **kwargs)
 
   def __unicode__(self):
     if self.title is None:
@@ -55,6 +70,8 @@ class Page(models.Model):
 class Library(Page):
   class Meta:
     proxy = True
+    verbose_name = _('Library')
+    verbose_name_plural = _('Library Articles')
 
   # Override save method so we set the content type
   def save(self, *args, **kwargs):
@@ -64,6 +81,9 @@ class Library(Page):
 class Armory(Page):
   class Meta:
     proxy = True
+    verbose_name = _('Armory')
+    verbose_name_plural = _('Armory Articles')
+
 
   # Override save method so we set the content type
   def save(self, *args, **kwargs):
@@ -73,6 +93,8 @@ class Armory(Page):
 class Event(Page):
   class Meta:
     proxy = True
+    verbose_name = _('Event')
+    verbose_name_plural = _('Events')
 
   # Override save method so we set the content type
   def save(self, *args, **kwargs):
@@ -81,11 +103,13 @@ class Event(Page):
 
   @staticmethod
   def upcomming_events():
-    return Event.objects.all().filter(is_active=True, content_type='EVE')
+    return Event.objects.all().filter(is_active=True, content_type='EVE', event_start__gte = date.today()).order_by('event_start')
 
 class Blog(Page):
   class Meta:
     proxy = True
+    verbose_name = _('Blog')
+    verbose_name_plural = _('Blog Posts')
 
   # Override save method so we set the content type
   def save(self, *args, **kwargs):

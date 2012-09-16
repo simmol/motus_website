@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.utils.translation import ugettext as _
 from django.contrib import admin
 
@@ -5,24 +7,29 @@ from modeltranslation.admin import TranslationAdmin
 from imperavi.admin import ImperaviAdmin
 
 from pages.models import Page, Library, Armory, Event, Blog, Category
+from pages.filters import PageCategoryFilter
 
 
+#
 # Custom Bulk Actions
-
+#
 def make_active(modeladmin, request, queryset):
+  queryset.filter(published=None).update(published=datetime.now())
   queryset.update(is_active=1)
 
 def make_unactive(modeladmin, request, queryset):
   queryset.update(is_active=0)
+  queryset.update(published=None)
 
 make_active.short_description = _("Activate the Posts");
 make_unactive.short_description = _('Deactivate the Posts');
 
 
-
 class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
   list_display = ('title_en', 'title_bg', 'slug', 'is_active', 'category', 'created')
   search_fields = ["title_en", 'title_bg']
+
+  list_filter = (PageCategoryFilter, 'is_active')
 
   prepopulated_fields = {"slug": ('title',)}
   actions = [make_active, make_unactive]
@@ -67,6 +74,8 @@ class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
 
 
 class PageAdmin(BasePageAdmin):
+  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published')
+
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
       kwargs["queryset"] = Category.objects.filter(content_type='SYS')
@@ -81,6 +90,7 @@ class PageAdmin(BasePageAdmin):
 
 
 class LibraryAdmin(BasePageAdmin):
+  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published')
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
       kwargs["queryset"] = Category.objects.filter(content_type='LIB')
@@ -93,6 +103,7 @@ class LibraryAdmin(BasePageAdmin):
     return qs.filter(content_type='LIB')
 
 class ArmoryAdmin(BasePageAdmin):
+  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published')
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
       kwargs["queryset"] = Category.objects.filter(content_type='ARM')
@@ -105,6 +116,10 @@ class ArmoryAdmin(BasePageAdmin):
     return qs.filter(content_type='ARM')
 
 class EventAdmin(BasePageAdmin):
+  fields = ('title', 'slug', 'category', 'body', ('event_start', 'event_end'), 'is_active')
+  list_display = ['title_en', 'title_bg', 'slug', 'category', 'event_start', 'event_end', 'is_active']
+
+  list_filter = (PageCategoryFilter, 'is_active')
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
       kwargs["queryset"] = Category.objects.filter(content_type='EVE')
@@ -117,6 +132,7 @@ class EventAdmin(BasePageAdmin):
     return qs.filter(content_type='EVE')
 
 class BlogAdmin(BasePageAdmin):
+  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published')
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
       kwargs["queryset"] = Category.objects.filter(content_type='BLG')
