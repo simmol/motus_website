@@ -6,6 +6,9 @@ from imperavi.admin import ImperaviAdmin
 
 from pages.models import Page, Library, Armory, Event, Blog, Category
 
+
+# Custom Bulk Actions
+
 def make_active(modeladmin, request, queryset):
   queryset.update(is_active=1)
 
@@ -18,8 +21,8 @@ make_unactive.short_description = _('Deactivate the Posts');
 
 
 class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
-  list_display = ('title', 'slug', 'is_active', 'category', 'created')
-  search_fields = ["title"]
+  list_display = ('title_en', 'title_bg', 'slug', 'is_active', 'category', 'created')
+  search_fields = ["title_en", 'title_bg']
 
   prepopulated_fields = {"slug": ('title',)}
   actions = [make_active, make_unactive]
@@ -46,8 +49,8 @@ class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
 
 
 class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
-  list_display = ('title', 'slug', 'content_type')
-  search_fields = ["title", 'content_type']
+  list_display = ('title_en', 'title_bg', 'slug', 'content_type')
+  search_fields = ["title_en", 'title_bg', 'content_type']
 
   list_filter = ('content_type',)
   prepopulated_fields = {"slug": ('title',)}

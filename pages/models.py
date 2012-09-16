@@ -31,7 +31,7 @@ class Page(models.Model):
   title = models.CharField(max_length=60,  blank=True, null=True)
   slug  = models.SlugField()
 
-  category = models.ForeignKey(Category, related_name='category', null=True)
+  category = models.ForeignKey(Category, related_name='category', null=True, blank=True)
 
   body  = models.TextField()
 
