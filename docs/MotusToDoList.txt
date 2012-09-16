@@ -1,0 +1,7 @@
+﻿TO-DO:
+1.Galleries - count every third div.gallery-photo and add class noMargin;  - Puff ;DONE
+2.Add short date and long date for the events. - Puff
+3.The section called div#headerThumbs should be dinamic - images shoul be added from the admin panel. Temporary static for now!- Puff
+4.Look why on http://127.0.0.1:8000/photologue/gallery on the tird gallery-photo div the class .noMargin is missing - Puff
+5.Second step gallery - popup jQuery plugin shoul be included; - Effie
+6.Pagination design should be implemented. - Effie
