@@ -4,9 +4,12 @@
 
   <div class="slider-wrapper theme-default">
     <div id="slider" class="nivoSlider">
-      <img src="/media/photos/king-arthur-sword.jpg" alt="Photo" />
-      <img src="/media/photos/history-of-Viking-swords.jpg" alt="Photo" />
-      <img src="/media/photos/2001-lion-crest-sword.png" alt="Photo" />
+      {% comment %}
+        Create Image size for sitebar and change it here
+      {% endcomment %}
+      {% for photo in  lattest_photos %}
+        <img src="{{ photo.get_thumbnail_url }}" />
+      {% endfor %}
     </div>
   </div>
 
