@@ -1,0 +1,13 @@
+{% load i18n %}
+<h3 class="asideTitle">{% trans Events %}</h3>
+<div  class="asideBox">
+
+<ul class="eventList">
+  {% for event in events %}
+  <li>
+    <a href="{% url pages.views.event event.slug %}">{{ event.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+</div>

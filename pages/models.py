@@ -79,6 +79,9 @@ class Event(Page):
     self.content_type = 'EVE'
     super(Event, self).save(*args, **kwargs)
 
+  @staticmethod
+  def upcomming_events():
+    return Event.objects.all().filter(is_active=True, content_type='EVE')
 
 class Blog(Page):
   class Meta:

@@ -14,28 +14,28 @@ from pages.models import Page, Library, Armory, Event, Blog
 
 def page_article(request, page_id=0, slug=''):
   if slug != '':
-    page = get_object_or_404(Page, slug=slug, content_type="SYS")
+    page = get_object_or_404(Page, slug=slug, content_type="SYS", is_active=True)
   elif page_id:
-    page = get_object_or_404(Page, pk=page_id, content_type="SYS")
+    page = get_object_or_404(Page, pk=page_id, content_type="SYS", is_active=True)
 
   return render_to_response('pages/page.html', {'page': page}, context_instance=RequestContext(request))
 
 def library_article(request, slug):
-  page = get_object_or_404(Library, slug=slug, content_type="LIB")
+  page = get_object_or_404(Library, slug=slug, content_type="LIB", is_active=True)
   return render_to_response('pages/library_details.html', {'page': page}, context_instance=RequestContext(request))
 
 def armory_article(request, slug):
-  page = get_object_or_404(Armory, slug=slug, content_type="ARM")
+  page = get_object_or_404(Armory, slug=slug, content_type="ARM", is_active=True)
   return render_to_response('pages/armory_details.html', {'page': page}, context_instance=RequestContext(request))
 
 
 def blog_article(request, slug):
-  page = get_object_or_404(Blog, slug=slug, content_type="BLG")
+  page = get_object_or_404(Blog, slug=slug, content_type="BLG", is_active=True)
   return render_to_response('pages/blog_details.html', {'page': page}, context_instance=RequestContext(request))
 
 
 def event(request, slug):
-  page = get_object_or_404(Event, slug=slug, content_type="EVE")
+  page = get_object_or_404(Event, slug=slug, content_type="EVE", is_active=True)
 
   return render_to_response('pages/event_details.html', {'page': page}, context_instance=RequestContext(request))
 
@@ -47,7 +47,7 @@ def event(request, slug):
 def blog_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Blog, category__slug=category)
+  pages = get_list_or_404(Blog, category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -64,7 +64,7 @@ def blog_category(request, category):
 def events_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Event, category__slug=category)
+  pages = get_list_or_404(Event, category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -81,7 +81,7 @@ def events_category(request, category):
 def armory_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Armory, category__slug=category)
+  pages = get_list_or_404(Armory, category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -98,7 +98,7 @@ def armory_category(request, category):
 def library_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Library, category__slug=category)
+  pages = get_list_or_404(Library, category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:

@@ -73,34 +73,11 @@
 
       <section id="Content" class="clear">
       <aside id="leftColumn">
-        <h3 class="asideTitle">Events</h3>
-        <div  class="asideBox">
-          <ul class="eventList">
-            <li><a href="">Summer camp</a></li>
-            <li><a href="">Instead, a dial spins
-              to the forecast of the day,
-              showing an icon of clouds.</a>
-            </li>
-            <li><a href="">Instead, a dial spins
-              to the forecast of the day,
-              showing an icon of clouds.</a>
-            </li>
-            <li><a href="">Instead, a dial spins
-              to the forecast of the day,
-              showing an icon of clouds.</a>
-            </li>
-          </ul>
-        </div>
-        <h3 class="asideTitle">Gallery</h3>
-        <div  class="asideBox">
-          <div class="slider-wrapper theme-default">
-            <div id="slider" class="nivoSlider">
-              <img src="/media/photos/king-arthur-sword.jpg" alt="Photo" />
-              <img src="/media/photos/history-of-Viking-swords.jpg" alt="Photo" />
-              <img src="/media/photos/2001-lion-crest-sword.png" alt="Photo" />
-            </div>
-          </div>
-        </div>
+        {% load upcomming_events %}
+        {% upcomming_events %}
+
+        {% load photologue_sidebar %}
+        {% lattest_photos %}
         <h3 class="asideTitle">Social networks</h3>
         <div  class="asideBox"></div>
       </aside>
@@ -112,23 +89,7 @@
       <footer id="Footer">
 
           <nav id="footerNav">
-              <ul>
-                  <li>
-                      <a href="">Home</a>
-                  </li>
-                  <li>
-                      <a href="">About us</a>
-                  </li>
-                  <li>
-                      <a href="">News</a>
-                  </li>
-                  <li>
-                      <a href="">Services</a>
-                  </li>
-                  <li>
-                      <a href="">Services</a>
-                  </li>
-              </ul>
+            {% show_menu "Footer Navigation" "ordered-list" %}
           </nav>
           <p id="copyright">&copy; Motus 2012 All rights reserved</p>
 
