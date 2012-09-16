@@ -50,13 +50,18 @@
   <div id="Wrapper">
       <header id="Header">
 
-          <h1><a href="" id="Logo"></a></h1>
-
+          <h1><a href="" id="Logo">Motus</a></h1>
+          <div id="headerThumbs">
+              <img src="media/images/HeaderImages.png" class="" alt="" />
+             <!-- <img src="media/" class="" alt="" />
+              <img src="media/" class="" alt="" />-->
+          </div>
+        <div id="siteBadge"></div>
       </header>
       <nav id="mainMenu" class="clear">
         {% load tree_menu_tags %}
         {% show_menu "Main Navigation" "ordered-list" %}
-        <ul>
+        <ul  id="languageSwitch">
           <li>
             <form action="/i18n/setlang/" method="post">{% csrf_token %}
               <input name="next" type="hidden" value="" />

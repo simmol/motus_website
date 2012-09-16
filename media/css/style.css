@@ -52,7 +52,7 @@ table {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     color: #181819;
     background: #e5e9e9;
 
@@ -67,7 +67,9 @@ a:hover {
 .clear {
     clear: both
 }
-
+.noMargin {
+    margin: 0 !important;
+}
 /*a:visited {
     color: #999;
 }*/
@@ -88,6 +90,17 @@ a {
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'open_sans_semibolditalic';
+    src: url('/media/fonts/opensans-semibolditalic-webfont.eot');
+    src: url('/media/fonts/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/media/fonts/opensans-semibolditalic-webfont.woff') format('woff'),
+    url('/media/fonts/opensans-semibolditalic-webfont.ttf') format('truetype'),
+    url('/media/fonts/opensans-semibolditalic-webfont.svg#open_sans_semibolditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /*Layout*/
 
@@ -95,13 +108,37 @@ a {
     background: url(/media/images/headerImg.png) 0 0 no-repeat #000d28;
     /*width: 110px;*/
     width: 100%;
-    height: 307px;
+    height: 221px;
+    padding: 86px 0 0 0;
 }
-
+#Logo, #headerThumbs, #siteBadge {
+    float: left;
+}
+#Logo {
+    text-indent: -3000px;
+    width: 190px;
+    height: 190px;
+    background: url(/media/images/Logo.png) 0 0 no-repeat;
+}
+#headerThumbs {
+   width: 617px;
+    padding: 60px 5px 0 5px;
+}
+#siteBadge {
+    width: 205px;
+    height: 205px;
+    background: url(/media/images/Badge.png) 0 0 no-repeat;
+}
 #Content {
     background: #c1c3cc;
     width: 1024px;
     min-height: 981px;
+
+}
+#languageSwitch {
+   position: absolute;
+   right: 5px;
+   bottom: 10px;
 
 }
 
@@ -125,8 +162,8 @@ a {
     -moz-box-shadow:0 12px 10px -8px #6b6868;
     box-shadow:0 12px 10px -8px #6b6868;
     height: 40px;
-    /*position: relative;
-    top: 65px;*/
+    position: relative;
+
 
 }
 
@@ -137,6 +174,7 @@ a {
 #mainMenu a {
     font-family: 'open_sans_semiboldregular';
     font-size: 15px;
+
     color: #fff;
     font-weight: bold;
     text-shadow: 2px 2px 0 #000;
@@ -155,11 +193,15 @@ a {
 }
 .childMenu {
     display: none;
-    height: 40px;
-    width: 150px;
+
+
 }
-.childMenu li {
+#mainMenu .childMenu li {
     display: block;
+    float: none;
+}
+#mainMenu .childMenu a {
+    font-weight: normal;
 }
 .parentMenu li:hover {
     background: #011744;
@@ -173,15 +215,16 @@ a {
 
 }
 #leftColumn {
-    width: 285px;
+    width: 265px;
     float: left;
     background: #acaeb6;
+    padding: 0 10px 0 5px;
 }
 
 #rightColumn {
-    width: 699px;
+    width: 720px;
     float: left;
-    padding: 20px;
+    padding: 20px 10px 20px 10px;
 }
 
 #Footer {
@@ -234,6 +277,7 @@ a {
 }
 
 .asideTitle {
+    font-family: 'open_sans_semibolditalic';
     font-size: 16px;
     font-style: italic;;
     line-height: 18px;
@@ -280,5 +324,39 @@ a {
     -moz-box-shadow: 1px 1px 0 0 #999;
     -webkit-box-shadow: 1px 1px 0 0 #999;
     box-shadow: 1px 1px 0 0 #999;
+
+}
+
+/*Page details*/
+.page-title, .EventContent h2,.mainGallery {
+    font-size: 22px;
+    font-family: 'open_sans_semibolditalic';
+    margin: 0 0 20px 0;
+}
+.listedArticle h2 {
+    font-size: 22px;
+    font-family: 'open_sans_semibolditalic';
+}
+.galleryTitle {
+    font-size: 18px;
+    font-family: 'open_sans_semibolditalic';
+    margin: 0 0 10px 0;
+}
+.EventInfo {
+    float: left;
+
+    width: 300px;
+    line-height: 20px;
+}
+.EventThumb {
+    float: left;
+}
+.EventThumb img {
+    width: 90px;
+    height: 90px;
+}
+.pageCategoryLabel, .authorLabel {
+    color: #165792;
+    font-weight: bold;
 
 }

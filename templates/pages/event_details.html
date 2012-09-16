@@ -1,26 +1,33 @@
-{% extends "pages/root.html" %}
+{% extends 'base.html' %}
+
 {% load i18n %}
 
+{% block content %}
+<div class="EventContent">
 {% block page-title %}
-  {{ page.title }}
+<h2>{{ page.title }}</h2>
 {% endblock %}
 
 {% block page-info %}
   {% if page.category %}
-    <div clas="page-category">
-      <label class="page-category-title" for="page-category-title">{%trans 'Category' %}</label>: <span name="page-category-title" class="page-category-title">{{ page.category.title}}</span>
-    </div>
+    <div class="EventInfo">
+      <label class="pageCategoryLabel" for="page-category-title">{%trans 'Category' %}</label>: <span name="pageCategoryTitle" class="page-category-title">{{ page.category.title}}</span>
+
   {% endif %}
 
-  <div class="page-created">
+  <div class="pageCreated longDate">
     {{ page.created }}
   </div>
+        {% block page-footer %}
+        <label class="authorLabel" for="author">{% trans 'author' %}</label>: <span name="author" class="author"> {{ page.created_by.get_full_name }} </span>
+        {% endblock %}
+    </div>
 {% endblock %}
-
+<div class="EventThumb pageBody">
 {% block page-body %}
   {{ page.body|safe }}
 {% endblock %}
+</div>
 
-{% block page-footer %}
-  <label class="author" for="author">{% trans 'author' %}</label>: <span name="author" class="author"> {{ page.created_by.get_full_name }} </span>
 {% endblock %}
+ </div>
