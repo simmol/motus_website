@@ -1,0 +1,9 @@
+Template Changes
+
+17 Sep 2012 ( Monday )
+1) Changed page.created to page.published -> should be changed on all pages templates where is avaible
+2) All "titles" become link to content: ("<span>" tags become "<a>" tags if there is difference for design)
+  * Article titles in category listing link to the given Article
+  * Category name in the article link to the given Category
+
+
