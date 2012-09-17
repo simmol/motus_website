@@ -8,8 +8,10 @@
 {% block category-items %}
   {% for page in pages %}
     <div class="category-item">
-      <div class="item-title"> {{ page.title }}</div>
-      <div class="item-created"> {{ page.created }} </div>
+      <div class="item-title"> 
+        <a href="{% url pages.views.blog_article page.slug %}" > {{ page.title }} </a>
+      </div>
+      <div class="item-created"> {{ page.published }} </div>
       <div class="item-author"> {{ page.created_by.get_full_name }} </div>
 
       <div class="item-body">

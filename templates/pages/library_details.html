@@ -8,12 +8,13 @@
 {% block page-info %}
   {% if page.category %}
     <div clas="page-category">
-      <label class="page-category-title" for="page-category-title">{%trans 'Category' %}</label>: <span name="page-category-title" class="page-category-title">{{ page.category.title}}</span>
+      <label class="page-category-title" for="page-category-title">{%trans 'Category' %}</label>:
+      <a href="{% url pages.views.library_category page.category.slug %}" name="page-category-title" class="page-category-title">{{ page.category.title}}</a>
     </div>
   {% endif %}
 
   <div class="page-created">
-    {{ page.created }}
+    {{ page.published }}
   </div>
 {% endblock %}
 

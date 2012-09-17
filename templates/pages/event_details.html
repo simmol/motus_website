@@ -9,7 +9,8 @@
     {% block page-info %}
       <div class="EventInfo">
         {% if page.category %}
-            <label class="pageCategoryLabel" for="page-category-title">{%trans 'Category' %}</label>: <span name="pageCategoryTitle" class="page-category-title">{{ page.category.title}}</span>
+        <label class="pageCategoryLabel" for="page-category-title">{%trans 'Category' %}</label>: 
+        <a href="{% url pages.views.events_category page.category.slug %}" name="pageCategoryTitle" class="page-category-title">{{ page.category.title}}</a>
         {% endif %}
 
         <div class="pageCreated longDate">
