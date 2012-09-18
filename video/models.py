@@ -75,7 +75,7 @@ class VideoGallery(models.Model):
       return []
     
   def sample(self, count=0, public=True):
-    if self.video_count==None:
+    if self.video_count==0:
       self.video_count=self.video_counting()
     if count == 0 or count > self.video_count:
       count = self.video_count
@@ -86,7 +86,7 @@ class VideoGallery(models.Model):
     return random.sample(video_set, count)
   
   def gallery_thumbnail(self):
-    return self.sample()[0].get_thumbnail()
+    return self.sample(1)[0].get_thumbnail()
   
   def video_counting(self, public=True):
     if public:
