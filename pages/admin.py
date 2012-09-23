@@ -74,7 +74,7 @@ class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
 
 
 class PageAdmin(BasePageAdmin):
-  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published')
+  fields = ('title', 'slug', 'category', 'body', 'is_active', 'published', 'page_image')
 
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
@@ -116,7 +116,7 @@ class ArmoryAdmin(BasePageAdmin):
     return qs.filter(content_type='ARM')
 
 class EventAdmin(BasePageAdmin):
-  fields = ('title', 'slug', 'category', 'body', ('event_start', 'event_end'), 'is_active')
+  fields = ('title', 'slug', 'category', 'body', ('event_start', 'event_end'), 'is_active', 'page_image')
   list_display = ['title_en', 'title_bg', 'slug', 'category', 'event_start', 'event_end', 'is_active']
 
   list_filter = (PageCategoryFilter, 'is_active')

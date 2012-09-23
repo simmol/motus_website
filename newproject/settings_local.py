@@ -73,6 +73,7 @@ LOCAL_INSTALLED_APPS = (
   'tagging',
   'modeltranslation',
   #
+  'sorl.thumbnail',
   # Custom
   'photologue',
   'imperavi',

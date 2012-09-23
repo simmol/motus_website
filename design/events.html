@@ -1,0 +1,15 @@
+<!--Right section of one event--> 
+<div class="eventThumb"> 
+  <span class="shortDate">23rd SEPT</span> 
+  <img src="media/photologue/eventthumb.png" alt="" class="eventImage"/> <!--Should have proper size for thumb 150x150 for example--> 
+</div> 
+
+
+<!--Left section of one event--> 
+<div class="eventDetails"> 
+  <label for="eventCategory">{% trans "Category" %}</label> <a href="#" class="eventCategory" name="eventCategory">{{ page.category.title }}</a>  <!-- Needed only for not category based listing-->
+  <div class="longDate">Full format date and time for event!</div> 
+  <label class="authorLabel" for="author">author</label> 
+  <span name="author" class="authorName"></span> 
+  <div class="eventDecription">Short description of the event like in the facebook events</div> 
+</div>

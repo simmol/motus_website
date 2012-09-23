@@ -1,5 +1,6 @@
 {% extends 'pages/category_root.html' %}
 {% load i18n %}
+{% load thumbnail %}
 
 {% block category-title %}
   {{ category.title }}
@@ -8,14 +9,21 @@
 {% block category-items %}
   {% for page in pages %}
     <div class="category-item">
-      <div class="item-title"> 
-        <a href="{% url pages.views.event page.slug %}">{{ page.title }}</a>
+      <div class="eventThumb"> 
+        <span class="shortDate">{{ page.event_start|date:"d M" }}</span> 
+        {% thumbnail page.page_image "100x100" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="eventImage">
+        {% endthumbnail %}
       </div>
-      <div class="item-created"> {{ page.published }} </div>
-      <div class="item-author"> {{ page.created_by.get_full_name }} </div>
 
-      <div class="item-body">
-        {{ page.body|striptags|safe|slice:":255"}}
+      <div class="eventDetails"> 
+        <div class="eventTitle"> 
+          <a href="{% url pages.views.event page.slug %}">{{ page.title }}</a>
+        </div>
+
+        <div class="longDate">{{ page.event_start }}</div> 
+        <label class="authorLabel" for="author">{% trans "author" %}</label>  <span name="author" class="authorName"> {{ page.author }}</span>
+        <div class="eventDecription">{{ page.body|striptags|slice:":255"}} {% if page.body|striptags|length > 255 %} ...{% endif %}</div> 
       </div>
     </div>
   {% empty %}

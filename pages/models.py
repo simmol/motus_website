@@ -27,9 +27,9 @@ class Category(models.Model):
     else:
       return self.title
 
+
 class Page(models.Model):
   CONTENT_TYPES = settings.CONTENT_TYPES
-  #TODO move content_types to settings_local.py
 
   # System field for holding different content type
   content_type = models.CharField(max_length = 3, choices = CONTENT_TYPES, default = 'SYS', editable= False)
@@ -46,6 +46,8 @@ class Page(models.Model):
   created     = models.DateTimeField(auto_now_add=True)
   published   = models.DateTimeField(null=True, blank=True)
 
+  page_image = models.ImageField(upload_to="page_images", null=True, blank=True)
+
   # Event
   event_start = models.DateTimeField(null=True)
   event_end   = models.DateTimeField(null=True, editable=True)
@@ -54,6 +56,10 @@ class Page(models.Model):
 
   objects = models.Manager()
   active_objects = PageManager()
+
+  def author(self):
+    author = self.created_by.get_full_name() if self.created_by.get_full_name() else self.created_by
+    return author
 
   def save(self, *args, **kwargs):
     if self.is_active == True :
