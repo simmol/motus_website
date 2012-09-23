@@ -1,7 +1,22 @@
 ﻿TO-DO:
 1.Galleries - count every third div.gallery-photo and add class noMargin;  - Puff ;DONE
-2.Add short date and long date for the events. - Puff
-3.The section called div#headerThumbs should be dinamic - images shoul be added from the admin panel. Temporary static for now!- Puff
+
+2.Add short date and long date for the events. - Puff; DONE
+
 4.Look why on http://127.0.0.1:8000/photologue/gallery on the tird gallery-photo div the class .noMargin is missing - Puff
-5.Second step gallery - popup jQuery plugin shoul be included; - Effie
+
+5.Second step gallery - popup jQuery plugin shoul be included; - Effie -- DONE shadowbox is enabled for images - to be used on images on the link rel="shadowbox" should be added
+
 6.Pagination design should be implemented. - Effie
+
+
+NOTES:
+
+23 Sep 2012
+For project to work proper some steps must be made:
+1) migrate models:
+  * pages
+  * sorl.thumbnail
+2) Create aditional Photo Sizes: - Refer the SS in the doc folder
+  * shadowbox
+  * event_thumb
