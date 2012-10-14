@@ -12,19 +12,19 @@ from django.contrib.auth.models import User
 class Video(models.Model):
   title = models.CharField(max_length=100,  blank=True, null=True)
   slug  = models.SlugField()
-  url = models.CharField(max_length=100, blank=False, null=False, 
+  url = models.CharField(max_length=100, blank=False, null=False,
             help_text = "Supports only youtube links (www.youtube.com and youtu.be)")
   description = models.TextField(blank=True,)
-  
+
   created_by = models.ForeignKey(User, related_name='video_created_by', null=True, blank=True)
   edited_by  = models.ForeignKey(User, related_name='video_edited_by', null=True, blank=True)
   edited  = models.DateTimeField(auto_now = True, null=True)
   created = models.DateTimeField(auto_now_add=True)
-  
+
   is_active = models.BooleanField()
-  
+
   embedUrl = models.CharField(max_length=20, blank = True)
-  
+
   def save(self, *args, **kwargs):
     if self.url:
       p = urlparse(self.url)
@@ -32,16 +32,16 @@ class Video(models.Model):
         self.embedUrl = p.path[1:]
       elif p.netloc == 'www.youtube.com':
         self.embedUrl = parse_qs(p.query)['v'][0]
-      
+
     super(Video, self).save(*args, **kwargs)
-    
-  
+
+
   def __unicode__(self):
     if self.title is None:
       return "None"
     else:
       return self.title
-    
+
   def get_thumbnail(self):
     return "http://img.youtube.com/vi/" + self.embedUrl + "/0.jpg"
 
@@ -55,10 +55,10 @@ class VideoGallery(models.Model):
                         help_text=_('Public galleries will be displayed in the default views.'))
   videos = models.ManyToManyField(Video, related_name='galleries', verbose_name=_('videos'),
                                   null=True, blank=True)
-                                  
+
   video_count=models.IntegerField(default=0, blank=True)
-  
-  
+
+
   class Meta:
     ordering = ['-date_added']
     get_latest_by = 'date_added'
@@ -71,9 +71,9 @@ class VideoGallery(models.Model):
   def get_videos(self):
     if self.is_public == True:
       return self.videos.filter(is_active = True)
-    else: 
+    else:
       return []
-    
+
   def sample(self, count=0, public=True):
     if self.video_count==0:
       self.video_count=self.video_counting()
@@ -84,15 +84,15 @@ class VideoGallery(models.Model):
     else:
       video_set = self.videos.all()
     return random.sample(video_set, count)
-  
+
   def gallery_thumbnail(self):
     return self.sample(1)[0].get_thumbnail()
-  
+
   def video_counting(self, public=True):
     if public:
       return self.get_videos().count()
     else:
       return self.videos.all().count()
-  video_count.short_description = _('count')  
-  
-  
+  video_count.short_description = _('count')
+
+

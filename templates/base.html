@@ -82,6 +82,9 @@
 
           {% load photologue_sidebar %}
           {% lattest_photos %}
+
+          {% load video_sidebar %}
+          {% lattest_videos %}
           <h3 class="asideTitle">Social networks</h3>
           <div  class="asideBox"></div>
         </aside>
@@ -109,10 +112,11 @@
   <script type="text/javascript">
     $(window).load(function() {
       $('#slider').nivoSlider();
- Shadowbox.init({
+      $('#slider2').nivoSlider();
+      Shadowbox.init({
         handleOversize: "drag",
         modal: true
-    });
+      });
     });
 
   </script>
