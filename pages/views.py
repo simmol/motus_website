@@ -43,6 +43,23 @@ def event(request, slug):
 #
 # Category pages
 #
+def page_category(request, category):
+  page = request.GET.get('page')
+
+  pages = get_list_or_404(Blog, category__slug=category, is_active=True)
+  paginator = Paginator(pages, 3)
+
+  try:
+      pages = paginator.page(page)
+  except PageNotAnInteger:
+      # If page is not an integer, deliver first page.
+      pages = paginator.page(1)
+  except EmptyPage:
+      # If page is out of range (e.g. 9999), deliver last page of results.
+      pages = paginator.page(paginator.num_pages)
+
+  return render_to_response('pages/blog_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+
 
 def blog_category(request, category):
   page = request.GET.get('page')

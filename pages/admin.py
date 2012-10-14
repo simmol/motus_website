@@ -1,7 +1,9 @@
 from datetime import datetime
 
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.contrib import admin
+
 
 from modeltranslation.admin import TranslationAdmin
 from imperavi.admin import ImperaviAdmin
@@ -26,13 +28,24 @@ make_unactive.short_description = _('Deactivate the Posts');
 
 
 class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
-  list_display = ('title_en', 'title_bg', 'slug', 'is_active', 'category', 'created')
+  list_display = ('title_en', 'title_bg', 'slug', 'url', 'is_active', 'category', 'created')
   search_fields = ["title_en", 'title_bg']
 
   list_filter = (PageCategoryFilter, 'is_active')
 
   prepopulated_fields = {"slug": ('title',)}
   actions = [make_active, make_unactive]
+
+  def url(self, obj):
+    urls_by_type = {
+      'LIB': 'library_article',
+      'ARM': 'armory_article',
+      'BLG': 'blog_article',
+      'EVE': 'event',
+      'SYS': 'page_article',
+    }
+    return reverse('pages.views.' + urls_by_type[obj.content_type], args=[obj.slug])
+
 
   class Media:
     js = (
@@ -56,11 +69,21 @@ class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
 
 
 class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
-  list_display = ('title_en', 'title_bg', 'slug', 'content_type')
+  list_display = ('title_en', 'title_bg', 'slug', 'url', 'content_type')
   search_fields = ["title_en", 'title_bg', 'content_type']
 
   list_filter = ('content_type',)
   prepopulated_fields = {"slug": ('title',)}
+
+  def url(self, obj):
+    urls_by_type = {
+      'LIB': 'library_category',
+      'ARM': 'armory_category',
+      'BLG': 'blog_category',
+      'EVE': 'events_category',
+      'SYS': 'page_category',
+    }
+    return reverse('pages.views.' + urls_by_type[obj.content_type], args=[obj.slug])
 
   class Media:
     js = (
@@ -75,6 +98,7 @@ class BaseCategoryAdmin(TranslationAdmin, ImperaviAdmin):
 
 class PageAdmin(BasePageAdmin):
   fields = ('title', 'slug', 'category', 'body', 'is_active', 'published', 'page_image')
+
 
   def formfield_for_foreignkey(self, db_field, request, **kwargs):
     if db_field.name == "category":
@@ -117,7 +141,7 @@ class ArmoryAdmin(BasePageAdmin):
 
 class EventAdmin(BasePageAdmin):
   fields = ('title', 'slug', 'category', 'body', ('event_start', 'event_end'), 'is_active', 'page_image')
-  list_display = ['title_en', 'title_bg', 'slug', 'category', 'event_start', 'event_end', 'is_active']
+  list_display = ['title_en', 'title_bg', 'slug', 'url', 'category', 'event_start', 'event_end', 'is_active']
 
   list_filter = (PageCategoryFilter, 'is_active')
   def formfield_for_foreignkey(self, db_field, request, **kwargs):

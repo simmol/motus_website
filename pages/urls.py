@@ -10,6 +10,7 @@ urlpatterns = patterns('pages.views',
   url('^events/event/(?P<slug>[-\w]+)', 'event', name='event'),
 
 
+  url('^page/category/(?P<category>[-\w]+)', 'page_category', name='page-category'),
   url('^library/category/(?P<category>[-\w]+)', 'library_category', name='library-category'),
   url('^armory/category/(?P<category>[-\w]+)', 'armory_category', name='armory-category'),
   url('^events/category/(?P<category>[-\w]+)', 'events_category', name='events-category'),
