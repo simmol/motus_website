@@ -76,20 +76,20 @@
       </nav>
 
       <section id="Content" class="clear">
-      <aside id="leftColumn">
-        {% load upcomming_events %}
-        {% upcomming_events %}
+        <aside id="leftColumn">
+          {% load upcomming_events %}
+          {% upcomming_events %}
 
-        {% load photologue_sidebar %}
-        {% lattest_photos %}
-        <h3 class="asideTitle">Social networks</h3>
-        <div  class="asideBox"></div>
-      </aside>
-      <section id="rightColumn">
-        {% block content %} {% endblock%}
+          {% load photologue_sidebar %}
+          {% lattest_photos %}
+          <h3 class="asideTitle">Social networks</h3>
+          <div  class="asideBox"></div>
+        </aside>
+        <section id="rightColumn">
+          {% block content %} {% endblock%}
+        </section>
+
       </section>
-
-  </section>
       <footer id="Footer">
 
           <nav id="footerNav">
