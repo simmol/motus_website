@@ -70,6 +70,12 @@ class Page(models.Model):
       self.published = datetime.now()
     super(Page, self).save(*args, **kwargs)
 
+  def get_url(self):
+
+    content_type = settings.CONTENT_TYPES_LABELS[self.content_type]
+    return reverse('pages.views.' + content_type + '_article', args=[self.slug])
+
+
   def __unicode__(self):
     if self.title is None:
       return "None"

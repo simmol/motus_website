@@ -34,7 +34,7 @@ def blog_article(request, slug):
   return render_to_response('pages/blog_details.html', {'page': page}, context_instance=RequestContext(request))
 
 
-def event(request, slug):
+def events_article(request, slug):
   page = get_object_or_404(Event, slug=slug, content_type="EVE", is_active=True)
 
   return render_to_response('pages/event_details.html', {'page': page}, context_instance=RequestContext(request))

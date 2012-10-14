@@ -10,11 +10,12 @@
 {% for page in pages %}
   <div class="category-item">
     <div class="item-title"> 
-      <a href="{% url pages.views.library_article page.slug %}"> {{ page.title }} </a>
+      <a href="{{ page.get_url }}"> {{ page.title }} </a>
     </div>
     {% if page.category %}
     <div class="item-category">
-      <a href="{{ page.category.get_url }}">{{ page.category }}</a>
+      <label class="pageCategoryLabel" for="page-category-title">{%trans 'Category' %}</label>: 
+      <a name="page-category-title" href="{{ page.category.get_url }}">{{ page.category }}</a>
     </div>
     {% endif %}
     <div class="item-created"> {{ page.published }} </div>
