@@ -327,6 +327,16 @@ a {
 
 }
 
+.gallery-next-prev {
+  display: inline-block;
+}
+
+ol.photo-found-galleries li {
+  padding-top: 5px;
+  padding-bottom:10px;
+}
+
+
 /*Page details*/
 .page-title, .EventContent h2,.mainGallery {
     font-size: 22px;
