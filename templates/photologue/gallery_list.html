@@ -10,9 +10,8 @@
     <div class="photo-gallery">
       <h3 class="galleryTitle"><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
       {% for photo in gallery.sample|slice:":1" %}
-      
         <div class="gallery-photo">
-          <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
+          <a href="{{ gallery.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
         </div>
       {% endfor %}
     </div>

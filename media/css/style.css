@@ -326,11 +326,12 @@ a {
     box-shadow: 1px 1px 0 0 #999;
 
 }
-
+.photo-gallery {
+  display: inline-block;
+}
 .gallery-next-prev {
   display: inline-block;
 }
-
 ol.photo-found-galleries li {
   padding-top: 5px;
   padding-bottom:10px;
