@@ -294,14 +294,12 @@ a {
     min-height: 43px;
     background: url(/media/images/Calendar.png) 0 50% no-repeat;
 }
-
 /*Right column content*/
 .listedArticle h2 {
     font-size: 22px;
     line-height: 18px;
     padding: 30px 0;
 }
-
 .listedArticle p {
     font-size: 14px;
     line-height: 18px;
@@ -309,24 +307,21 @@ a {
     padding: 0 0 25px 0;
     background: url(media/images/pargraphSeparator.png) 50% 100% no-repeat;
 }
-
-
 /*Galleries*/
 .gallery-photo {
     margin: 0 5px 5px 0;
     float: left;
-
 }
-.gallery-photo img {
+.gallery-photo img,
+.galleryLink img,
+.allPhotos img {
     padding: 15px;
     border: solid 1px #ACAEB6;
     background: #fff;
     -moz-box-shadow: 1px 1px 0 0 #999;
     -webkit-box-shadow: 1px 1px 0 0 #999;
     box-shadow: 1px 1px 0 0 #999;
-
 }
-
 /*Page details*/
 .page-title, .EventContent h2,.mainGallery {
     font-size: 22px;

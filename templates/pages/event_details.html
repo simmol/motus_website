@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load i18n %}
-
+{% load thumbnail %}
 {% block content %}
   <div class="EventContent">
     <h2>{{ page.title }}</h2>
@@ -16,11 +16,15 @@
         <div class="pageCreated longDate">
           {{ page.published }}
         </div>
-        <label class="authorLabel" for="author">{% trans 'author' %}</label>: <span name="author" class="author"> {{ page.created_by.get_full_name }} </span>
+        <label class="authorLabel" for="author">{% trans 'author' %}</label>: <span name="author" class="author"> {{ page.created_by.get_full_name }} 
+         {% thumbnail page.page_image "100x100" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="eventImage">
+        {% endthumbnail %}
+      </span>
       </div>
     {% endblock %}
 
-    <div class="EventThumb pageBody">
+    <div class="pageBody">
       {{ page.body|safe }}
     </div>
   </div>
