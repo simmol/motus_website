@@ -84,6 +84,10 @@ class Library(Page):
     self.content_type = 'LIB'
     super(Library, self).save(*args, **kwargs)
 
+  @staticmethod
+  def lattest_articles(article_count = 6):
+    return Library.objects.all().filter(is_active=True, content_type="LIB").exclude(body='').order_by('-published')[:article_count]
+
 class Armory(Page):
   class Meta:
     proxy = True
