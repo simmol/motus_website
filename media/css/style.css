@@ -322,8 +322,7 @@ a {
     -webkit-box-shadow: 1px 1px 0 0 #999;
     box-shadow: 1px 1px 0 0 #999;
 }
-<<<<<<< HEAD
-=======
+
 .photo-gallery {
   display: inline-block;
 }
@@ -335,8 +334,6 @@ ol.photo-found-galleries li {
   padding-bottom:10px;
 }
 
-
->>>>>>> eea83e00cea6770621f65a586882b0c45435ec8e
 /*Page details*/
 .page-title, .EventContent h2,.mainGallery {
     font-size: 22px;
@@ -344,7 +341,7 @@ ol.photo-found-galleries li {
     margin: 0 0 20px 0;
 }
 .listedArticle h2 {
-    font-size: 22px;
+    font-size: 22px;гиг
     font-family: 'open_sans_semibolditalic';
 }
 .galleryTitle {
