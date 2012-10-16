@@ -322,6 +322,21 @@ a {
     -webkit-box-shadow: 1px 1px 0 0 #999;
     box-shadow: 1px 1px 0 0 #999;
 }
+<<<<<<< HEAD
+=======
+.photo-gallery {
+  display: inline-block;
+}
+.gallery-next-prev {
+  display: inline-block;
+}
+ol.photo-found-galleries li {
+  padding-top: 5px;
+  padding-bottom:10px;
+}
+
+
+>>>>>>> eea83e00cea6770621f65a586882b0c45435ec8e
 /*Page details*/
 .page-title, .EventContent h2,.mainGallery {
     font-size: 22px;

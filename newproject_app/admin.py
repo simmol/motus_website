@@ -4,6 +4,7 @@ from modeltranslation.admin import TranslationAdmin
 
 from photologue.models import Gallery, Photo
 from photologue.admin import GalleryAdmin, PhotoAdmin
+from imperavi.admin import ImperaviAdmin
 
 from siteblocks.models import Block
 from siteblocks.admin import BlockAdmin
@@ -25,7 +26,7 @@ class GalleryTranslation(GalleryAdmin, TranslationAdmin, MediaTranslation):
 class PhotoTranslation(PhotoAdmin, TranslationAdmin, MediaTranslation):
   pass
 
-class SiteBlocksTranslation(BlockAdmin, TranslationAdmin, MediaTranslation):
+class SiteBlocksTranslation(BlockAdmin, TranslationAdmin, MediaTranslation, ImperaviAdmin):
   pass
 
 

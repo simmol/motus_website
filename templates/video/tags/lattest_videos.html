@@ -1,0 +1,19 @@
+{% load i18n %}
+<h3 class="asideTitle">{% trans 'Lattest videos' %}</h3>
+<div  class="asideBox">
+
+  <div class="slider-wrapper theme-default">
+    <div id="slider2" class="nivoSlider">
+      {% comment %}
+        Create Image size for sitebar and change it here
+      {% endcomment %}
+      {% for video in  lattest_videos %}
+      <a href="{% url video.views.video_details video.slug %}" title="{{ video.title }}">
+          <img src="{{ video.get_thumbnail }}" />
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+

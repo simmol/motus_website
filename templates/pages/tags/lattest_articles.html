@@ -1,0 +1,30 @@
+{% load i18n %}
+
+<div class="lattest-articles">
+  <h2>
+    {%trans 'Lattest Articles' %}
+  </h2>
+  {% for article in articles %}
+    <article class="listedArticle">
+      <h2><a href="{% url pages.views.library_article article.slug %}">{{ article.title }}</a></h2>
+      {% if article.category %}
+        <div clas="page-category">
+          <label class="page-category-title" for="page-category-title">{%trans 'Category' %}</label>:
+          <a href="{% url pages.views.library_category article.category.slug %}" name="page-category-title" class="page-category-title">{{ article.category.title}}</a>
+        </div>
+      {% endif %}
+      {% if article.published %}
+        <div class="page-created">
+          {{ article.published }}
+        </div>
+      {% endif %}
+
+      <p>
+        {{ article.body|striptags|safe|slice:":255"}} 
+        {% if article.body|striptags|length > 255 %}
+          <a href="{% url pages.views.library_article article.slug %}">... {%trans 'Read more' %}</a>
+        {% endif %}
+      </a>
+    </article>
+  {% endfor %}
+<div>

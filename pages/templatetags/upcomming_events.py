@@ -12,5 +12,5 @@ def upcomming_events( context):
   context['events'] = events
   return context
 
-register.inclusion_tag('%s/upcomming_events.html' % APP_LABEL, takes_context=True)(upcomming_events)
+register.inclusion_tag('%s/tags/upcomming_events.html' % APP_LABEL, takes_context=True)(upcomming_events)
 

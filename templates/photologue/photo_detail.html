@@ -1,6 +1,7 @@
 {% extends "photologue/root.html" %}
 
 {% load photologue_tags %}
+{% load i18n %}
 
 {% block title %}{{ object.title }}{% endblock %}
 
@@ -11,13 +12,31 @@
     <a href="{{ object.get_shadowbox_url }}" rel="shadowbox" class="galleryLink"><img src="{{ object.get_display_url }}" alt="{{ object.title }}"/></a>
     {% if object.caption %}<p>{{ object.caption }}</p>{% endif %}
 </div>
+
+
 {% if object.public_galleries %}
+<<<<<<< HEAD
 <h2 class="clear galleryTitle">This photo is found in the following galleries:</h2>
 <ol class="allPhotos">
 {% for gallery in object.public_galleries %}
     <li>{%previous_in_gallery object gallery%}
         <a href="{{ gallery.get_absolute_url }}" class="galleryLink">{{ gallery.title }}</a> {%next_in_gallery object gallery%}
     </li>
+=======
+
+<h2>This photo is found in the following galleries:</h2>
+<ol class="photo-found-galleries">
+{% for gallery in object.public_galleries %}
+  <li>
+    <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></br>
+    <span class="gallery-next-prev">
+      {%previous_in_gallery object gallery%}
+    </span>
+    <span class="gallery-next-prev">
+      {%next_in_gallery object gallery%}
+    </span>
+  </li>
+>>>>>>> eea83e00cea6770621f65a586882b0c45435ec8e
 {% endfor %}
 </ol>
 {% endif %}

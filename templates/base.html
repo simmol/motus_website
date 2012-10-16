@@ -42,6 +42,7 @@
       {% endfor %}
       </div>
   {% endif %}
+
   <!-- PROMPT IE 6 USERS TO INSTALL CHROME FRAME. REMOVE THIS IF YOU SUPPORT IE 6.
   chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -53,9 +54,6 @@
 
           <h1><a href="" id="Logo">Motus</a></h1>
           <div id="headerThumbs">
-              <img src="media/images/HeaderImages.png" class="" alt="" />
-             <!-- <img src="media/" class="" alt="" />
-              <img src="media/" class="" alt="" />-->
           </div>
         <div id="siteBadge"></div>
       </header>
@@ -65,7 +63,7 @@
         <ul  id="languageSwitch">
           <li>
             <form action="/i18n/setlang/" method="post">{% csrf_token %}
-              <input name="next" type="hidden" value="" />
+              <input name="next" type="hidden" value="/" />
               <select name="language">
                 {% for lang in LANGUAGES %}
                   <option value="{{ lang.0 }}" {% ifequal LANGUAGE_CODE lang.0 %}  selected="selected" {% endifequal %} >{{ lang.1 }}</option>
@@ -78,24 +76,27 @@
       </nav>
 
       <section id="Content" class="clear">
-      <aside id="leftColumn">
-        {% load upcomming_events %}
-        {% upcomming_events %}
+        <aside id="leftColumn">
+          {% load upcomming_events %}
+          {% upcomming_events %}
 
-        {% load photologue_sidebar %}
-        {% lattest_photos %}
-        <h3 class="asideTitle">Social networks</h3>
-        <div  class="asideBox"></div>
-      </aside>
-      <section id="rightColumn">
-        {% block content %} {% endblock%}
+          {% load photologue_sidebar %}
+          {% lattest_photos %}
+
+          {% load video_sidebar %}
+          {% lattest_videos %}
+          <h3 class="asideTitle">Social networks</h3>
+          <div  class="asideBox"></div>
+        </aside>
+        <section id="rightColumn">
+          {% block content %} {% endblock%}
+        </section>
+
       </section>
-
-  </section>
       <footer id="Footer">
 
           <nav id="footerNav">
-            {% comment %} 
+            {% comment %}
               Here will be the footer menu - for now disable it
               {% show_menu "Footer Navigation" "ordered-list" %}
             {% endcomment %}
@@ -111,12 +112,13 @@
   <script type="text/javascript">
     $(window).load(function() {
       $('#slider').nivoSlider();
- Shadowbox.init({
+      $('#slider2').nivoSlider();
+      Shadowbox.init({
         handleOversize: "drag",
         modal: true
+      });
     });
-    });
-   
+
   </script>
 
   </body>

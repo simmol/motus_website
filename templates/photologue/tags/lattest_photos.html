@@ -8,7 +8,9 @@
         Create Image size for sitebar and change it here
       {% endcomment %}
       {% for photo in  lattest_photos %}
-        <img src="{{ photo.get_thumbnail_url }}" />
+      <a href="{{ photo.get_absolute_url }}" title="{{ photo.title }}">
+          <img src="{{ photo.get_thumbnail_url }}" />
+        </a>
       {% endfor %}
     </div>
   </div>
