@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block content %} 
+
+<h2> {{ content_type_label|capfirst }} </h2>
+
+<div class="articles">
+{% for page in pages %}
+  <div class="category-item">
+    <div class="item-title"> 
+      <a href="{{ page.get_url }}"> {{ page.title }} </a>
+    </div>
+    {% if page.category %}
+    <div class="item-category">
+      <label class="pageCategoryLabel" for="page-category-title">{%trans 'Category' %}</label>: 
+      <a name="page-category-title" href="{{ page.category.get_url }}">{{ page.category }}</a>
+    </div>
+    {% endif %}
+    <div class="item-created"> {{ page.published }} </div>
+    <div class="item-author"> {{ page.created_by.get_full_name }} </div>
+
+    <div class="item-body">
+      {{ page.body|striptags|safe|slice:":255"}}
+    </div>
+  </div>
+{% empty %}
+  {% trans  'There are no articles' %}
+{% endfor %}
+</div>
+
+<div class="pagination">
+  <span class="step-links">
+    {% if pages.has_previous %}
+      <a href="?page={{ pages.previous_page_number }}"> {%trans 'Previous' %}</a>
+    {% endif %}
+
+    <span class="current">
+      {%trans 'Page' %} {{ pages.number }} {%trans 'of' %} {{ pages.paginator.num_pages }}.
+    </span>
+
+    {% if pages.has_next %}
+      <a href="?page={{ pages.next_page_number }}">{%trans 'Next' %}</a>
+    {% endif %}
+  </span>
+</div> 
+
+{% endblock %}

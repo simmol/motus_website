@@ -106,3 +106,10 @@ CONTENT_TYPES = (
   ('BLG', 'blog'),
 )
 
+CONTENT_TYPES_LABELS = {
+  'SYS': gettext('page'),
+  'LIB': gettext('library'),
+  'ARM': gettext('armory'),
+  'EVE': gettext('events'),
+  'BLG': gettext('blog'),
+}

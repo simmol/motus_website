@@ -5,7 +5,7 @@
 <ul class="eventList">
   {% for event in events %}
   <li>
-    <a href="{% url pages.views.event event.slug %}">{{ event.title }}</a>
+    <a href="{% url pages.views.events_article event.slug %}">{{ event.title }}</a>
   </li>
   {% endfor %}
 </ul>

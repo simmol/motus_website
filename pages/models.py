@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from datetime import datetime, date
 
 class PageManager(models.Manager):
@@ -27,6 +28,9 @@ class Category(models.Model):
     else:
       return self.title
 
+  def get_url(self):
+    content_type = settings.CONTENT_TYPES_LABELS[self.content_type]
+    return reverse('pages.views.' + content_type + '_category', args=[self.slug])
 
 class Page(models.Model):
   CONTENT_TYPES = settings.CONTENT_TYPES
@@ -65,6 +69,12 @@ class Page(models.Model):
     if self.is_active == True :
       self.published = datetime.now()
     super(Page, self).save(*args, **kwargs)
+
+  def get_url(self):
+
+    content_type = settings.CONTENT_TYPES_LABELS[self.content_type]
+    return reverse('pages.views.' + content_type + '_article', args=[self.slug])
+
 
   def __unicode__(self):
     if self.title is None:

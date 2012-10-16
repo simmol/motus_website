@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404, render_to_response, get_list_or_
 from django.template import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
+
+from django.conf import settings
 
 # Models
 from pages.models import Page, Library, Armory, Event, Blog
@@ -34,10 +34,31 @@ def blog_article(request, slug):
   return render_to_response('pages/blog_details.html', {'page': page}, context_instance=RequestContext(request))
 
 
-def event(request, slug):
+def events_article(request, slug):
   page = get_object_or_404(Event, slug=slug, content_type="EVE", is_active=True)
 
   return render_to_response('pages/event_details.html', {'page': page}, context_instance=RequestContext(request))
+
+#
+# Main listings
+#
+
+def pages_articles(request, content_type):
+  page = request.GET.get('page')
+
+  pages = Page.objects.all().filter(is_active=True, content_type=content_type)
+  paginator = Paginator(pages, 5)
+
+  content_type_label = settings.CONTENT_TYPES_LABELS[content_type]
+  try:
+    pages = paginator.page(page)
+  except PageNotAnInteger:
+    pages = paginator.page(1)
+  except EmptyPage:
+    # If page is out of range (e.g. 9999), deliver last page of results.
+    pages = paginator.page(paginator.num_pages)
+
+  return render_to_response('pages/pages_articles_listing.html', {'pages': pages, 'content_type_label': content_type_label}, context_instance=RequestContext(request))
 
 
 #
