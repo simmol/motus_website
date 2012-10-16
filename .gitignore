@@ -7,6 +7,10 @@
 *.sw?
 *.egg-info*
 static
-media
+media/cache
+media/multiuploader_images
+media/multiuploader
+media/page_images
+media/photologue
 *.mo
 nbproject
