@@ -20,3 +20,8 @@ For project to work proper some steps must be made:
 2) Create aditional Photo Sizes: - Refer the SS in the doc folder
   * shadowbox
   * event_thumb
+
+Bugs
+1.Image upload and insert image in post with WYSIWYG editor in pages doesn`t work 
+tested on http://91.230.195.221:8080/admin/pages/page/3/ / Chrome 22.0.
+See the screenshot ImageUpload.png

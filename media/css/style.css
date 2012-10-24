@@ -415,3 +415,7 @@ ol.photo-found-galleries li {
 #categoryTabs a:hover {
 
 }
+.page-body div, .page-body p, .page-body span {
+    font-size: 14px;
+    line-height: 18px;
+}
