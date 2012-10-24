@@ -171,6 +171,7 @@ a {
 }
 #rightColumn h2 {
     font-size: 22px;
+    padding: 10px 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
 }
