@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-11 01:20+0300\n"
+"POT-Creation-Date: 2012-11-09 00:19+0200\n"
 "PO-Revision-Date: 2012-09-11 01:51\n"
 "Last-Translator: Pavlin Angelov <fonix.simmol@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,505 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: newproject/settings.py:45 newproject/settings_local.py:46
-msgid "Bulgarian"
-msgstr "Български"
+#: design/events.html:10 pages/filters.py:8 pages/models.py:22
+#: templates/pages/armory_details.html:11 templates/pages/blog_details.html:11
+#: templates/pages/event_details.html:12
+#: templates/pages/library_details.html:11
+#: templates/pages/pages_articles_listing.html:17
+#: templates/pages/tags/lattest_articles.html:12
+msgid "Category"
+msgstr ""
 
-#: newproject/settings.py:46 newproject/settings_local.py:47
+#: newproject/settings_local.py:23
 msgid "English"
 msgstr "Английски"
 
-#: pages/admin.py:16
+#: newproject/settings_local.py:24
+msgid "Bulgarian"
+msgstr "Български"
+
+#: newproject/settings_local.py:110
+msgid "page"
+msgstr ""
+
+#: newproject/settings_local.py:111
+msgid "library"
+msgstr ""
+
+#: newproject/settings_local.py:112
+msgid "armory"
+msgstr ""
+
+#: newproject/settings_local.py:113
+msgid "events"
+msgstr ""
+
+#: newproject/settings_local.py:114
+msgid "blog"
+msgstr ""
+
+#: pages/admin.py:26
 #, fuzzy
 msgid "Activate the Posts"
 msgstr "Активирайте Постовете"
 
-#: pages/admin.py:17
+#: pages/admin.py:27
 #, fuzzy
 msgid "Deactivate the Posts"
 msgstr "Активирайте Постовете"
+
+#: pages/models.py:23
+msgid "Categories"
+msgstr ""
+
+#: pages/models.py:99
+msgid "Library"
+msgstr ""
+
+#: pages/models.py:100
+msgid "Library Articles"
+msgstr ""
+
+#: pages/models.py:114
+msgid "Armory"
+msgstr ""
+
+#: pages/models.py:115
+msgid "Armory Articles"
+msgstr ""
+
+#: pages/models.py:126
+msgid "Event"
+msgstr ""
+
+#: pages/models.py:127
+msgid "Events"
+msgstr ""
+
+#: pages/models.py:141
+msgid "Blog"
+msgstr ""
+
+#: pages/models.py:142
+msgid "Blog Posts"
+msgstr ""
+
+#: photologue/models.py:39
+msgid "Separate tags with spaces, put quotes around multiple-word tags."
+msgstr ""
+
+#: photologue/models.py:48
+msgid "Django-tagging was not found, tags will be treated as plain text."
+msgstr ""
+
+#: photologue/models.py:85
+msgid "Very Low"
+msgstr ""
+
+#: photologue/models.py:86
+msgid "Low"
+msgstr ""
+
+#: photologue/models.py:87
+msgid "Medium-Low"
+msgstr ""
+
+#: photologue/models.py:88
+msgid "Medium"
+msgstr ""
+
+#: photologue/models.py:89
+msgid "Medium-High"
+msgstr ""
+
+#: photologue/models.py:90
+msgid "High"
+msgstr ""
+
+#: photologue/models.py:91
+msgid "Very High"
+msgstr ""
+
+#: photologue/models.py:96
+msgid "Top"
+msgstr ""
+
+#: photologue/models.py:97
+msgid "Right"
+msgstr ""
+
+#: photologue/models.py:98
+msgid "Bottom"
+msgstr ""
+
+#: photologue/models.py:99
+msgid "Left"
+msgstr ""
+
+#: photologue/models.py:100
+msgid "Center (Default)"
+msgstr ""
+
+#: photologue/models.py:104
+msgid "Flip left to right"
+msgstr ""
+
+#: photologue/models.py:105
+msgid "Flip top to bottom"
+msgstr ""
+
+#: photologue/models.py:106
+msgid "Rotate 90 degrees counter-clockwise"
+msgstr ""
+
+#: photologue/models.py:107
+msgid "Rotate 90 degrees clockwise"
+msgstr ""
+
+#: photologue/models.py:108
+msgid "Rotate 180 degrees"
+msgstr ""
+
+#: photologue/models.py:112
+msgid "Tile"
+msgstr ""
+
+#: photologue/models.py:113
+msgid "Scale"
+msgstr ""
+
+#: photologue/models.py:123
+#, python-format
+msgid ""
+"Chain multiple filters using the following pattern \"FILTER_ONE->FILTER_TWO-"
+">FILTER_THREE\". Image filters will be applied in order. The following "
+"filters are available: %s."
+msgstr ""
+
+#: photologue/models.py:127 video/models.py:49
+msgid "date published"
+msgstr ""
+
+#: photologue/models.py:128 photologue/models.py:185 photologue/models.py:484
+#: video/models.py:50
+msgid "title"
+msgstr ""
+
+#: photologue/models.py:129 video/models.py:51
+msgid "title slug"
+msgstr ""
+
+#: photologue/models.py:130 video/models.py:52
+msgid "A \"slug\" is a unique URL-friendly title for an object."
+msgstr ""
+
+#: photologue/models.py:131 photologue/models.py:187 photologue/models.py:533
+#: video/models.py:53
+#, fuzzy
+msgid "description"
+msgstr "Описание"
+
+#: photologue/models.py:132 photologue/models.py:188 photologue/models.py:489
+#: video/models.py:54
+msgid "is public"
+msgstr ""
+
+#: photologue/models.py:133 video/models.py:55
+msgid "Public galleries will be displayed in the default views."
+msgstr ""
+
+#: photologue/models.py:134 photologue/models.py:496
+msgid "photos"
+msgstr ""
+
+#: photologue/models.py:136 photologue/models.py:189 photologue/models.py:490
+msgid "tags"
+msgstr ""
+
+#: photologue/models.py:141 video/models.py:65
+msgid "gallery"
+msgstr ""
+
+#: photologue/models.py:142 video/models.py:66
+msgid "galleries"
+msgstr ""
+
+#: photologue/models.py:175 video/models.py:96
+msgid "count"
+msgstr ""
+
+#: photologue/models.py:182
+msgid "images file (.zip)"
+msgstr ""
+
+#: photologue/models.py:183
+msgid "Select a .zip file of images to upload into a new Gallery."
+msgstr ""
+
+#: photologue/models.py:184
+msgid ""
+"Select a gallery to add these images to. leave this empty to create a new "
+"gallery from the supplied title."
+msgstr ""
+
+#: photologue/models.py:185
+msgid ""
+"All photos in the gallery will be given a title made up of the gallery title "
+"+ a sequential number."
+msgstr ""
+
+#: photologue/models.py:186 photologue/models.py:487 treemenus/models.py:10
+#, fuzzy
+msgid "caption"
+msgstr "Описание"
+
+#: photologue/models.py:186
+msgid "Caption will be added to all photos."
+msgstr ""
+
+#: photologue/models.py:187
+msgid "A description of this Gallery."
+msgstr ""
+
+#: photologue/models.py:188
+msgid ""
+"Uncheck this to make the uploaded gallery and included photographs private."
+msgstr ""
+
+#: photologue/models.py:192
+msgid "gallery upload"
+msgstr ""
+
+#: photologue/models.py:193
+msgid "gallery uploads"
+msgstr ""
+
+#: photologue/models.py:257 photologue/models.py:644
+msgid "image"
+msgstr ""
+
+#: photologue/models.py:259
+msgid "date taken"
+msgstr ""
+
+#: photologue/models.py:261
+msgid "crop from"
+msgstr ""
+
+#: photologue/models.py:262
+msgid "effect"
+msgstr ""
+
+#: photologue/models.py:280
+msgid "An \"admin_thumbnail\" photo size has not been defined."
+msgstr ""
+
+#: photologue/models.py:288
+msgid "Thumbnail"
+msgstr ""
+
+#: photologue/models.py:485
+msgid "slug"
+msgstr ""
+
+#: photologue/models.py:488
+msgid "date added"
+msgstr ""
+
+#: photologue/models.py:489
+msgid "Public photographs will be displayed in the default views."
+msgstr ""
+
+#: photologue/models.py:495
+msgid "photo"
+msgstr ""
+
+#: photologue/models.py:532 photologue/models.py:658 treemenus/models.py:103
+msgid "name"
+msgstr ""
+
+#: photologue/models.py:604
+msgid "rotate or flip"
+msgstr ""
+
+#: photologue/models.py:605 photologue/models.py:612
+msgid "color"
+msgstr ""
+
+#: photologue/models.py:605
+msgid ""
+"A factor of 0.0 gives a black and white image, a factor of 1.0 gives the "
+"original image."
+msgstr ""
+
+#: photologue/models.py:606
+msgid "brightness"
+msgstr ""
+
+#: photologue/models.py:606
+msgid ""
+"A factor of 0.0 gives a black image, a factor of 1.0 gives the original "
+"image."
+msgstr ""
+
+#: photologue/models.py:607
+msgid "contrast"
+msgstr ""
+
+#: photologue/models.py:607
+msgid ""
+"A factor of 0.0 gives a solid grey image, a factor of 1.0 gives the original "
+"image."
+msgstr ""
+
+#: photologue/models.py:608
+msgid "sharpness"
+msgstr ""
+
+#: photologue/models.py:608
+msgid ""
+"A factor of 0.0 gives a blurred image, a factor of 1.0 gives the original "
+"image."
+msgstr ""
+
+#: photologue/models.py:609
+msgid "filters"
+msgstr ""
+
+#: photologue/models.py:610
+msgid "size"
+msgstr ""
+
+#: photologue/models.py:610
+msgid ""
+"The height of the reflection as a percentage of the orignal image. A factor "
+"of 0.0 adds no reflection, a factor of 1.0 adds a reflection equal to the "
+"height of the orignal image."
+msgstr ""
+
+#: photologue/models.py:611
+msgid "strength"
+msgstr ""
+
+#: photologue/models.py:611
+msgid "The initial opacity of the reflection gradient."
+msgstr ""
+
+#: photologue/models.py:612
+msgid ""
+"The background color of the reflection gradient. Set this to match the "
+"background color of your page."
+msgstr ""
+
+#: photologue/models.py:615 photologue/models.py:666
+msgid "photo effect"
+msgstr ""
+
+#: photologue/models.py:616
+msgid "photo effects"
+msgstr ""
+
+#: photologue/models.py:645
+msgid "style"
+msgstr ""
+
+#: photologue/models.py:646
+msgid "opacity"
+msgstr ""
+
+#: photologue/models.py:646
+msgid "The opacity of the overlay."
+msgstr ""
+
+#: photologue/models.py:649
+msgid "watermark"
+msgstr ""
+
+#: photologue/models.py:650
+msgid "watermarks"
+msgstr ""
+
+#: photologue/models.py:658
+msgid ""
+"Photo size name should contain only letters, numbers and underscores. "
+"Examples: \"thumbnail\", \"display\", \"small\", \"main_page_widget\"."
+msgstr ""
+
+#: photologue/models.py:659
+msgid "width"
+msgstr ""
+
+#: photologue/models.py:659
+msgid ""
+"If width is set to \"0\" the image will be scaled to the supplied height."
+msgstr ""
+
+#: photologue/models.py:660
+msgid "height"
+msgstr ""
+
+#: photologue/models.py:660
+msgid ""
+"If height is set to \"0\" the image will be scaled to the supplied width"
+msgstr ""
+
+#: photologue/models.py:661
+msgid "quality"
+msgstr ""
+
+#: photologue/models.py:661
+msgid "JPEG image quality."
+msgstr ""
+
+#: photologue/models.py:662
+msgid "upscale images?"
+msgstr ""
+
+#: photologue/models.py:662
+msgid ""
+"If selected the image will be scaled up if necessary to fit the supplied "
+"dimensions. Cropped sizes will be upscaled regardless of this setting."
+msgstr ""
+
+#: photologue/models.py:663
+msgid "crop to fit?"
+msgstr ""
+
+#: photologue/models.py:663
+msgid ""
+"If selected the image will be scaled and cropped to fit the supplied "
+"dimensions."
+msgstr ""
+
+#: photologue/models.py:664
+msgid "pre-cache?"
+msgstr ""
+
+#: photologue/models.py:664
+msgid "If selected this photo size will be pre-cached as photos are added."
+msgstr ""
+
+#: photologue/models.py:665
+msgid "increment view count?"
+msgstr ""
+
+#: photologue/models.py:665
+msgid ""
+"If selected the image's \"view_count\" will be incremented when this photo "
+"size is displayed."
+msgstr ""
+
+#: photologue/models.py:667
+msgid "watermark image"
+msgstr ""
+
+#: photologue/models.py:671
+msgid "photo size"
+msgstr ""
+
+#: photologue/models.py:672
+msgid "photo sizes"
+msgstr ""
 
 #: siteblocks/models.py:6
 msgid "Alias"
@@ -52,15 +534,15 @@ msgstr "Описание"
 msgid "Short memo for this block."
 msgstr ""
 
-#: siteblocks/models.py:8
+#: siteblocks/models.py:8 treemenus/models.py:11
 msgid "URL"
 msgstr ""
 
 #: siteblocks/models.py:8
 msgid ""
-"Page URL this block is related to. Regular expressions supported (e.g.: "
-"\"/news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL "
-"alias:</b> \"*\" &#8212; every page."
+"Page URL this block is related to. Regular expressions supported (e.g.: \"/"
+"news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL alias:</"
+"b> \"*\" &#8212; every page."
 msgstr ""
 
 #: siteblocks/models.py:9
@@ -87,6 +569,216 @@ msgstr ""
 msgid "Site Blocks"
 msgstr ""
 
-#: templates/pages/article.html:14
+#: sorl/thumbnail/fields.py:47
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: sorl/thumbnail/admin/compat.py:56
+msgid "Clear image"
+msgstr ""
+
+#: templates/index.html:14
+msgid "Short Information"
+msgstr ""
+
+#: templates/pages/armory_category.html:22
+#: templates/pages/blog_category.html:22
+#: templates/pages/event_category.html:30
+#: templates/pages/library_category.html:22
+msgid "There are no articles in this category"
+msgstr ""
+
+#: templates/pages/armory_category.html:30
+#: templates/pages/blog_category.html:30
+#: templates/pages/event_category.html:38
+#: templates/pages/library_category.html:30
+#: templates/pages/pages_articles_listing.html:36
+msgid "Previous"
+msgstr ""
+
+#: templates/pages/armory_category.html:34
+#: templates/pages/blog_category.html:34
+#: templates/pages/event_category.html:42
+#: templates/pages/library_category.html:34
+#: templates/pages/pages_articles_listing.html:40
+msgid "Page"
+msgstr ""
+
+#: templates/pages/armory_category.html:34
+#: templates/pages/blog_category.html:34
+#: templates/pages/event_category.html:42
+#: templates/pages/library_category.html:34
+#: templates/pages/pages_articles_listing.html:40
+msgid "of"
+msgstr ""
+
+#: templates/pages/armory_category.html:38
+#: templates/pages/blog_category.html:38
+#: templates/pages/event_category.html:46
+#: templates/pages/library_category.html:38
+#: templates/pages/pages_articles_listing.html:44
+#: templates/photologue/tags/next_in_gallery.html:6
+msgid "Next"
+msgstr ""
+
+#: templates/pages/armory_details.html:26 templates/pages/blog_details.html:26
+#: templates/pages/event_category.html:25
+#: templates/pages/event_details.html:19
+#: templates/pages/library_details.html:26
 msgid "author"
 msgstr "Автор"
+
+#: templates/pages/pages_articles_listing.html:29
+msgid "There are no articles"
+msgstr ""
+
+#: templates/pages/tags/lattest_articles.html:5
+msgid "Lattest Articles"
+msgstr ""
+
+#: templates/pages/tags/lattest_articles.html:25
+msgid "Read more"
+msgstr ""
+
+#: templates/photologue/tags/lattest_photos.html:2
+msgid "Gallery"
+msgstr ""
+
+#: templates/photologue/tags/prev_in_gallery.html:6
+msgid "Prev"
+msgstr ""
+
+#: templates/video/tags/lattest_videos.html:2
+msgid "Lattest videos"
+msgstr ""
+
+#: treemenus/admin.py:174 treemenus/admin.py:191
+#, python-format
+msgid "The menu item \"%s\" was moved successfully."
+msgstr ""
+
+#: treemenus/admin.py:176
+#, python-format
+msgid "The menu item \"%s\" is not allowed to move down."
+msgstr ""
+
+#: treemenus/admin.py:193
+#, python-format
+msgid "The menu item \"%s\" is not allowed to move up."
+msgstr ""
+
+#: treemenus/models.py:9
+msgid "parent"
+msgstr ""
+
+#: treemenus/models.py:12
+msgid "named URL"
+msgstr ""
+
+#: treemenus/models.py:13
+msgid "level"
+msgstr ""
+
+#: treemenus/models.py:14
+msgid "rank"
+msgstr ""
+
+#: treemenus/models.py:15 treemenus/models.py:127
+msgid "menu"
+msgstr ""
+
+#: treemenus/models.py:104
+msgid "root item"
+msgstr ""
+
+#: treemenus/models.py:109
+msgid "root"
+msgstr ""
+
+#: treemenus/models.py:128
+msgid "menus"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:8
+msgid "Menu Items"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:11
+msgid "Add an item"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:24
+msgid "Caption"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:25
+msgid "Url"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:26
+msgid "Named url"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:27
+msgid "Move"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:37
+msgid "[Root]"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:53
+msgid "Down"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menu/change_form.html:59
+msgid "Up"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:18
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:23
+#: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:15
+#: treemenus/templates/admin/treemenus/menuitem/object_history.html:15
+msgid "Home"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:19
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:24
+#: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:16
+#: treemenus/templates/admin/treemenus/menuitem/object_history.html:16
+msgid "Menus"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:21
+msgid "Add Item"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/change_form.html:26
+#: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:18
+#: treemenus/templates/admin/treemenus/menuitem/object_history.html:18
+msgid "Items"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:20
+msgid "Delete"
+msgstr ""
+
+#: treemenus/templates/admin/treemenus/menuitem/object_history.html:20
+msgid "History"
+msgstr ""
+
+#: video/admin.py:22
+#, fuzzy
+msgid "Activate the Videos"
+msgstr "Активирайте Постовете"
+
+#: video/admin.py:23
+#, fuzzy
+msgid "Deactivate the Videos"
+msgstr "Активирайте Постовете"
+
+#: video/models.py:56
+msgid "videos"
+msgstr ""
