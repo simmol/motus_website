@@ -30,7 +30,12 @@ class Category(models.Model):
 
   def get_url(self):
     content_type = settings.CONTENT_TYPES_LABELS[self.content_type]
-    return reverse('pages.views.' + content_type + '_category', args=[self.slug])
+    try:
+      url = reverse('pages.views.' + content_type + '_category', args=[self.slug])
+    except:
+      url = 'None'
+
+    return url
 
 class Page(models.Model):
   CONTENT_TYPES = settings.CONTENT_TYPES
@@ -73,7 +78,12 @@ class Page(models.Model):
   def get_url(self):
 
     content_type = settings.CONTENT_TYPES_LABELS[self.content_type]
-    return reverse('pages.views.' + content_type + '_article', args=[self.slug])
+    try:
+      url = reverse('pages.views.' + content_type + '_article', args=[self.slug])
+    except:
+      url = 'None';
+
+    return url
 
 
   def __unicode__(self):

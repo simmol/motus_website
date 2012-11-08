@@ -41,11 +41,17 @@ class BasePageAdmin(TranslationAdmin, ImperaviAdmin):
       'LIB': 'library_article',
       'ARM': 'armory_article',
       'BLG': 'blog_article',
-      'EVE': 'event',
+      'EVE': 'events_article',
       'SYS': 'page_article',
     }
-    return reverse('pages.views.' + urls_by_type[obj.content_type], args=[obj.slug])
 
+
+    try:
+      url = reverse('pages.views.' + urls_by_type[obj.content_type], args=[obj.slug])
+    except:
+      url = 'None'
+
+    return url
 
   class Media:
     js = (
