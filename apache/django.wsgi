@@ -2,15 +2,13 @@ import os, site, sys
 
 # From http://jmoiron.net/blog/deploying-django-mod-wsgi-virtualenv/
 
-vepath = '/home/ubuntu/.virtualenvs/newproject/lib/python2.7/site-packages'
+vepath = '/home/simmol/.virtualenvs/motus/lib/python2.7/site-packages'
 
 prev_sys_path = list(sys.path)
 
 site.addsitedir(vepath)
 
-sys.path.append('/home/ubuntu/django_projects')
-sys.path.append('/home/ubuntu/django_projects/newproject')
-sys.path.append('/home/ubuntu/django_projects/newproject/newproject_site')
+sys.path.append('/var/html/motus')
 
 # reorder sys.path so new directories from the addsitedir show up first
 new_sys_path = [p for p in sys.path if p not in prev_sys_path]
