@@ -1,12 +1,16 @@
 {% extends 'pages/category_root.html' %}
 {% load i18n %}
 {% load thumbnail %}
+{% load siteblocks %}
 
 {% block category-title %}
   {{ category.title }}
 {% endblock %}
 
 {% block category-items %}
+  <div class="category-info">
+    {% siteblock {category_description} %}
+  </div>
   {% for page in pages %}
     <div class="category-item">
       <div class="eventThumb"> 
