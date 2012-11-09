@@ -16,7 +16,7 @@
 
 {% if object.public_galleries %}
 
-<h2>This photo is found in the following galleries:</h2>
+<h2>{% trans "This photo is found in the following galleries:" %}</h2>
 <ol class="photo-found-galleries">
 {% for gallery in object.public_galleries %}
   <li>

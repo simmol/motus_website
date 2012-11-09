@@ -114,7 +114,8 @@ def events_category(request, category):
       # If page is out of range (e.g. 9999), deliver last page of results.
       pages = paginator.page(paginator.num_pages)
 
-  return render_to_response('pages/event_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+  category_description = 'events_' + category
+  return render_to_response('pages/event_category.html', {'pages': pages, 'category': category, 'category_description': category_description}, context_instance=RequestContext(request))
 
 def armory_category(request, category):
   page = request.GET.get('page')
