@@ -2,19 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-09 00:19+0200\n"
-"PO-Revision-Date: 2012-09-11 01:51\n"
-"Last-Translator: Pavlin Angelov <fonix.simmol@gmail.com>\n"
+"POT-Creation-Date: 2012-11-09 03:17+0200\n"
+"PO-Revision-Date: 2012-11-09 03:24\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
@@ -25,7 +26,7 @@ msgstr ""
 #: templates/pages/pages_articles_listing.html:17
 #: templates/pages/tags/lattest_articles.html:12
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: newproject/settings_local.py:23
 msgid "English"
@@ -35,71 +36,73 @@ msgstr "Английски"
 msgid "Bulgarian"
 msgstr "Български"
 
-#: newproject/settings_local.py:110
-msgid "page"
-msgstr ""
-
 #: newproject/settings_local.py:111
-msgid "library"
-msgstr ""
+#: photologue/templates/photologue/gallery_list.html:28
+#: photologue/templates/photologue/photo_list.html:23
+#: templates/photologue/gallery_list.html:26
+#: templates/photologue/photo_list.html:23
+msgid "page"
+msgstr "страница"
 
 #: newproject/settings_local.py:112
-msgid "armory"
-msgstr ""
+msgid "library"
+msgstr "библиотека"
 
 #: newproject/settings_local.py:113
-msgid "events"
-msgstr ""
+msgid "armory"
+msgstr "оръжейна"
 
 #: newproject/settings_local.py:114
+msgid "events"
+msgstr "събития"
+
+#: newproject/settings_local.py:115
 msgid "blog"
-msgstr ""
+msgstr "блог"
 
 #: pages/admin.py:26
-#, fuzzy
 msgid "Activate the Posts"
-msgstr "Активирайте Постовете"
+msgstr "Активирайте постовете"
 
 #: pages/admin.py:27
-#, fuzzy
 msgid "Deactivate the Posts"
-msgstr "Активирайте Постовете"
+msgstr "Деактивирайте постовете"
 
 #: pages/models.py:23
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: pages/models.py:99
 msgid "Library"
-msgstr ""
+msgstr "Библиотека"
 
 #: pages/models.py:100
 msgid "Library Articles"
-msgstr ""
+msgstr "Статии в Библиотеката"
 
 #: pages/models.py:114
 msgid "Armory"
-msgstr ""
+msgstr "Оръжейна"
 
 #: pages/models.py:115
 msgid "Armory Articles"
-msgstr ""
+msgstr "Статии в Оръжейната"
 
 #: pages/models.py:126
 msgid "Event"
-msgstr ""
+msgstr "Ивент"
 
 #: pages/models.py:127
 msgid "Events"
-msgstr ""
+msgstr "Ивенти"
 
 #: pages/models.py:141
 msgid "Blog"
-msgstr ""
+msgstr "Блог"
 
 #: pages/models.py:142
 msgid "Blog Posts"
-msgstr ""
+msgstr "Блог постове"
 
 #: photologue/models.py:39
 msgid "Separate tags with spaces, put quotes around multiple-word tags."
@@ -111,51 +114,51 @@ msgstr ""
 
 #: photologue/models.py:85
 msgid "Very Low"
-msgstr ""
+msgstr "Много ниско"
 
 #: photologue/models.py:86
 msgid "Low"
-msgstr ""
+msgstr "Ниско"
 
 #: photologue/models.py:87
 msgid "Medium-Low"
-msgstr ""
+msgstr "Средно ниско"
 
 #: photologue/models.py:88
 msgid "Medium"
-msgstr ""
+msgstr "Средно"
 
 #: photologue/models.py:89
 msgid "Medium-High"
-msgstr ""
+msgstr "Средно високо"
 
 #: photologue/models.py:90
 msgid "High"
-msgstr ""
+msgstr "Високо"
 
 #: photologue/models.py:91
 msgid "Very High"
-msgstr ""
+msgstr "Много високо"
 
 #: photologue/models.py:96
 msgid "Top"
-msgstr ""
+msgstr "Отгоре"
 
 #: photologue/models.py:97
 msgid "Right"
-msgstr ""
+msgstr "Дясно"
 
 #: photologue/models.py:98
 msgid "Bottom"
-msgstr ""
+msgstr "Отдолу"
 
 #: photologue/models.py:99
 msgid "Left"
-msgstr ""
+msgstr "Ляво"
 
 #: photologue/models.py:100
 msgid "Center (Default)"
-msgstr ""
+msgstr "Център (по подразбиране)"
 
 #: photologue/models.py:104
 msgid "Flip left to right"
@@ -188,9 +191,9 @@ msgstr ""
 #: photologue/models.py:123
 #, python-format
 msgid ""
-"Chain multiple filters using the following pattern \"FILTER_ONE->FILTER_TWO-"
-">FILTER_THREE\". Image filters will be applied in order. The following "
-"filters are available: %s."
+"Chain multiple filters using the following pattern "
+"\"FILTER_ONE->FILTER_TWO->FILTER_THREE\". Image filters will be applied in "
+"order. The following filters are available: %s."
 msgstr ""
 
 #: photologue/models.py:127 video/models.py:49
@@ -200,7 +203,7 @@ msgstr ""
 #: photologue/models.py:128 photologue/models.py:185 photologue/models.py:484
 #: video/models.py:50
 msgid "title"
-msgstr ""
+msgstr "заглавие"
 
 #: photologue/models.py:129 video/models.py:51
 msgid "title slug"
@@ -212,7 +215,6 @@ msgstr ""
 
 #: photologue/models.py:131 photologue/models.py:187 photologue/models.py:533
 #: video/models.py:53
-#, fuzzy
 msgid "description"
 msgstr "Описание"
 
@@ -227,19 +229,19 @@ msgstr ""
 
 #: photologue/models.py:134 photologue/models.py:496
 msgid "photos"
-msgstr ""
+msgstr "снимки"
 
 #: photologue/models.py:136 photologue/models.py:189 photologue/models.py:490
 msgid "tags"
-msgstr ""
+msgstr "тагове"
 
 #: photologue/models.py:141 video/models.py:65
 msgid "gallery"
-msgstr ""
+msgstr "галерия"
 
 #: photologue/models.py:142 video/models.py:66
 msgid "galleries"
-msgstr ""
+msgstr "галерии"
 
 #: photologue/models.py:175 video/models.py:96
 msgid "count"
@@ -261,12 +263,11 @@ msgstr ""
 
 #: photologue/models.py:185
 msgid ""
-"All photos in the gallery will be given a title made up of the gallery title "
-"+ a sequential number."
+"All photos in the gallery will be given a title made up of the gallery title"
+" + a sequential number."
 msgstr ""
 
 #: photologue/models.py:186 photologue/models.py:487 treemenus/models.py:10
-#, fuzzy
 msgid "caption"
 msgstr "Описание"
 
@@ -365,8 +366,8 @@ msgstr ""
 
 #: photologue/models.py:607
 msgid ""
-"A factor of 0.0 gives a solid grey image, a factor of 1.0 gives the original "
-"image."
+"A factor of 0.0 gives a solid grey image, a factor of 1.0 gives the original"
+" image."
 msgstr ""
 
 #: photologue/models.py:608
@@ -447,8 +448,7 @@ msgid "width"
 msgstr ""
 
 #: photologue/models.py:659
-msgid ""
-"If width is set to \"0\" the image will be scaled to the supplied height."
+msgid "If width is set to \"0\" the image will be scaled to the supplied height."
 msgstr ""
 
 #: photologue/models.py:660
@@ -456,8 +456,7 @@ msgid "height"
 msgstr ""
 
 #: photologue/models.py:660
-msgid ""
-"If height is set to \"0\" the image will be scaled to the supplied width"
+msgid "If height is set to \"0\" the image will be scaled to the supplied width"
 msgstr ""
 
 #: photologue/models.py:661
@@ -518,6 +517,165 @@ msgstr ""
 msgid "photo sizes"
 msgstr ""
 
+#: photologue/templates/photologue/gallery_archive.html:4
+#: photologue/templates/photologue/gallery_archive.html:8
+#: templates/photologue/gallery_archive.html:4
+#: templates/photologue/gallery_archive.html:8
+msgid "Latest Photo Galleries"
+msgstr "Последни фотогалерии"
+
+#: photologue/templates/photologue/gallery_archive.html:22
+#: photologue/templates/photologue/gallery_archive_day.html:22
+#: photologue/templates/photologue/gallery_archive_month.html:22
+#: photologue/templates/photologue/gallery_list.html:22
+#: templates/photologue/gallery_archive.html:23
+#: templates/photologue/gallery_archive_day.html:22
+#: templates/photologue/gallery_archive_month.html:22
+#: templates/photologue/gallery_list.html:20
+msgid "No galleries were found."
+msgstr "Няма намерени галерии."
+
+#: photologue/templates/photologue/gallery_archive_day.html:4
+#: photologue/templates/photologue/gallery_archive_day.html:8
+#: photologue/templates/photologue/gallery_archive_month.html:4
+#: photologue/templates/photologue/gallery_archive_month.html:8
+#: photologue/templates/photologue/gallery_archive_year.html:4
+#: photologue/templates/photologue/gallery_archive_year.html:8
+#: photologue/templates/photologue/photo_archive_year.html:4
+#: templates/photologue/gallery_archive_day.html:4
+#: templates/photologue/gallery_archive_day.html:8
+#: templates/photologue/gallery_archive_month.html:4
+#: templates/photologue/gallery_archive_month.html:8
+#: templates/photologue/gallery_archive_year.html:4
+#: templates/photologue/gallery_archive_year.html:8
+#: templates/photologue/photo_archive_year.html:4
+msgid "Galleries for"
+msgstr "Галерии за"
+
+#: photologue/templates/photologue/gallery_archive_day.html:25
+#: photologue/templates/photologue/gallery_archive_month.html:25
+#: photologue/templates/photologue/gallery_archive_year.html:15
+#: templates/photologue/gallery_archive.html:26
+#: templates/photologue/gallery_archive_day.html:25
+#: templates/photologue/gallery_archive_month.html:25
+#: templates/photologue/gallery_archive_year.html:15
+msgid "View all galleries."
+msgstr "Виж всички галерии"
+
+#: photologue/templates/photologue/gallery_detail.html:18
+#: templates/photologue/gallery_detail.html:18
+msgid "View all galleries"
+msgstr "Виж всички галерии"
+
+#: photologue/templates/photologue/gallery_list.html:4
+#: templates/photologue/gallery_list.html:4
+msgid "All Galleries"
+msgstr "Всички галерии"
+
+#: photologue/templates/photologue/gallery_list.html:8
+#: templates/photologue/gallery_list.html:8
+msgid "All galleries"
+msgstr "Всички галерии"
+
+#: photologue/templates/photologue/gallery_list.html:26
+#: templates/photologue/gallery_list.html:24
+msgid "galleries total."
+msgstr "галерии общо"
+
+#: photologue/templates/photologue/gallery_list.html:28
+#: photologue/templates/photologue/photo_list.html:23
+#: templates/pages/armory_category.html:30
+#: templates/pages/blog_category.html:30
+#: templates/pages/event_category.html:39
+#: templates/pages/library_category.html:30
+#: templates/pages/pages_articles_listing.html:36
+#: templates/photologue/gallery_list.html:26
+#: templates/photologue/photo_list.html:23
+msgid "Previous"
+msgstr "Предишен"
+
+#: photologue/templates/photologue/gallery_list.html:28
+#: photologue/templates/photologue/photo_list.html:23
+#: templates/pages/armory_category.html:34
+#: templates/pages/blog_category.html:34
+#: templates/pages/event_category.html:43
+#: templates/pages/library_category.html:34
+#: templates/pages/pages_articles_listing.html:40
+#: templates/photologue/gallery_list.html:26
+#: templates/photologue/photo_list.html:23
+msgid "of"
+msgstr "от"
+
+#: photologue/templates/photologue/gallery_list.html:28
+#: photologue/templates/photologue/photo_list.html:23
+#: templates/pages/armory_category.html:38
+#: templates/pages/blog_category.html:38
+#: templates/pages/event_category.html:47
+#: templates/pages/library_category.html:38
+#: templates/pages/pages_articles_listing.html:44
+#: templates/photologue/gallery_list.html:26
+#: templates/photologue/photo_list.html:23
+#: templates/photologue/tags/next_in_gallery.html:6
+msgid "Next"
+msgstr "Следващ"
+
+#: photologue/templates/photologue/photo_archive.html:4
+#: photologue/templates/photologue/photo_archive.html:8
+#: templates/photologue/photo_archive.html:4
+#: templates/photologue/photo_archive.html:8
+msgid "Latest Photos"
+msgstr "Последни снимки"
+
+#: photologue/templates/photologue/photo_archive.html:17
+#: photologue/templates/photologue/photo_archive_day.html:17
+#: photologue/templates/photologue/photo_archive_month.html:17
+#: photologue/templates/photologue/photo_list.html:17
+#: templates/photologue/photo_archive.html:17
+#: templates/photologue/photo_archive_day.html:17
+#: templates/photologue/photo_archive_month.html:17
+#: templates/photologue/photo_list.html:17
+msgid "No photos were found."
+msgstr "Няма намерени снимки."
+
+#: photologue/templates/photologue/photo_archive.html:19
+#: photologue/templates/photologue/photo_archive_day.html:19
+#: photologue/templates/photologue/photo_archive_month.html:19
+#: templates/photologue/photo_archive.html:19
+#: templates/photologue/photo_archive_day.html:19
+#: templates/photologue/photo_archive_month.html:19
+msgid "View all photographs"
+msgstr "Виж всички снимки"
+
+#: photologue/templates/photologue/photo_archive_day.html:4
+#: photologue/templates/photologue/photo_archive_day.html:8
+#: photologue/templates/photologue/photo_archive_month.html:4
+#: photologue/templates/photologue/photo_archive_month.html:8
+#: photologue/templates/photologue/photo_archive_year.html:8
+#: templates/photologue/photo_archive_day.html:4
+#: templates/photologue/photo_archive_day.html:8
+#: templates/photologue/photo_archive_month.html:4
+#: templates/photologue/photo_archive_month.html:8
+#: templates/photologue/photo_archive_year.html:8
+msgid "Photos for"
+msgstr "Снимки за"
+
+#: photologue/templates/photologue/photo_detail.html:16
+#: templates/photologue/photo_detail.html:19
+msgid "This photo is found in the following galleries:"
+msgstr "Тази снимка е в следните галерии:"
+
+#: photologue/templates/photologue/photo_list.html:4
+#: photologue/templates/photologue/photo_list.html:8
+#: templates/photologue/photo_list.html:4
+#: templates/photologue/photo_list.html:8
+msgid "All Photos"
+msgstr "Всички снимки"
+
+#: photologue/templates/photologue/photo_list.html:21
+#: templates/photologue/photo_list.html:21
+msgid "photos total."
+msgstr "снимки общо."
+
 #: siteblocks/models.py:6
 msgid "Alias"
 msgstr "Псевдоним"
@@ -540,9 +698,9 @@ msgstr ""
 
 #: siteblocks/models.py:8
 msgid ""
-"Page URL this block is related to. Regular expressions supported (e.g.: \"/"
-"news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL alias:</"
-"b> \"*\" &#8212; every page."
+"Page URL this block is related to. Regular expressions supported (e.g.: "
+"\"/news.*\" &#8212; everything under \"/news\").<br /><b>Reserved URL "
+"alias:</b> \"*\" &#8212; every page."
 msgstr ""
 
 #: siteblocks/models.py:9
@@ -581,50 +739,25 @@ msgstr ""
 
 #: templates/index.html:14
 msgid "Short Information"
-msgstr ""
+msgstr "Кратка информация"
 
 #: templates/pages/armory_category.html:22
 #: templates/pages/blog_category.html:22
-#: templates/pages/event_category.html:30
+#: templates/pages/event_category.html:31
 #: templates/pages/library_category.html:22
 msgid "There are no articles in this category"
-msgstr ""
-
-#: templates/pages/armory_category.html:30
-#: templates/pages/blog_category.html:30
-#: templates/pages/event_category.html:38
-#: templates/pages/library_category.html:30
-#: templates/pages/pages_articles_listing.html:36
-msgid "Previous"
-msgstr ""
+msgstr "Няма статии в тази категория"
 
 #: templates/pages/armory_category.html:34
 #: templates/pages/blog_category.html:34
-#: templates/pages/event_category.html:42
+#: templates/pages/event_category.html:43
 #: templates/pages/library_category.html:34
 #: templates/pages/pages_articles_listing.html:40
 msgid "Page"
-msgstr ""
-
-#: templates/pages/armory_category.html:34
-#: templates/pages/blog_category.html:34
-#: templates/pages/event_category.html:42
-#: templates/pages/library_category.html:34
-#: templates/pages/pages_articles_listing.html:40
-msgid "of"
-msgstr ""
-
-#: templates/pages/armory_category.html:38
-#: templates/pages/blog_category.html:38
-#: templates/pages/event_category.html:46
-#: templates/pages/library_category.html:38
-#: templates/pages/pages_articles_listing.html:44
-#: templates/photologue/tags/next_in_gallery.html:6
-msgid "Next"
-msgstr ""
+msgstr "Страница"
 
 #: templates/pages/armory_details.html:26 templates/pages/blog_details.html:26
-#: templates/pages/event_category.html:25
+#: templates/pages/event_category.html:26
 #: templates/pages/event_details.html:19
 #: templates/pages/library_details.html:26
 msgid "author"
@@ -632,27 +765,31 @@ msgstr "Автор"
 
 #: templates/pages/pages_articles_listing.html:29
 msgid "There are no articles"
-msgstr ""
+msgstr "Няма статии"
 
 #: templates/pages/tags/lattest_articles.html:5
 msgid "Lattest Articles"
-msgstr ""
+msgstr "Последни статии"
 
 #: templates/pages/tags/lattest_articles.html:25
 msgid "Read more"
-msgstr ""
+msgstr "Прочети още"
+
+#: templates/photologue/gallery_detail.html:9
+msgid "Originally published"
+msgstr "Публикувана"
 
 #: templates/photologue/tags/lattest_photos.html:2
 msgid "Gallery"
-msgstr ""
+msgstr "Галерия"
 
 #: templates/photologue/tags/prev_in_gallery.html:6
 msgid "Prev"
-msgstr ""
+msgstr "Предишен"
 
 #: templates/video/tags/lattest_videos.html:2
 msgid "Lattest videos"
-msgstr ""
+msgstr "Последни видеа"
 
 #: treemenus/admin.py:174 treemenus/admin.py:191
 #, python-format
@@ -723,7 +860,7 @@ msgstr ""
 
 #: treemenus/templates/admin/treemenus/menu/change_form.html:27
 msgid "Move"
-msgstr ""
+msgstr "Премести"
 
 #: treemenus/templates/admin/treemenus/menu/change_form.html:37
 msgid "[Root]"
@@ -731,29 +868,29 @@ msgstr ""
 
 #: treemenus/templates/admin/treemenus/menu/change_form.html:53
 msgid "Down"
-msgstr ""
+msgstr "Надолу"
 
 #: treemenus/templates/admin/treemenus/menu/change_form.html:59
 msgid "Up"
-msgstr ""
+msgstr "Нагоре"
 
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:18
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:23
 #: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:15
 #: treemenus/templates/admin/treemenus/menuitem/object_history.html:15
 msgid "Home"
-msgstr ""
+msgstr "Начало"
 
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:19
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:24
 #: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:16
 #: treemenus/templates/admin/treemenus/menuitem/object_history.html:16
 msgid "Menus"
-msgstr ""
+msgstr "Менюта"
 
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:21
 msgid "Add Item"
-msgstr ""
+msgstr "Добави"
 
 #: treemenus/templates/admin/treemenus/menuitem/change_form.html:26
 #: treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:18
@@ -770,14 +907,12 @@ msgid "History"
 msgstr ""
 
 #: video/admin.py:22
-#, fuzzy
 msgid "Activate the Videos"
-msgstr "Активирайте Постовете"
+msgstr "Активирайте постовете"
 
 #: video/admin.py:23
-#, fuzzy
 msgid "Deactivate the Videos"
-msgstr "Активирайте Постовете"
+msgstr "Деактивирайте постовете"
 
 #: video/models.py:56
 msgid "videos"

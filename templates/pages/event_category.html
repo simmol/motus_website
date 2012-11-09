@@ -15,9 +15,6 @@
     <div class="category-item">
       <div class="eventThumb"> 
         <span class="shortDate">{{ page.event_start|date:"d M" }}</span> 
-        {% thumbnail page.page_image "100x100" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="eventImage">
-        {% endthumbnail %}
       </div>
 
       <div class="eventDetails"> 

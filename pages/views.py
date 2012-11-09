@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render_to_response, get_list_or_404
+from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 
 # Models
-from pages.models import Page, Library, Armory, Event, Blog
+from pages.models import Page, Library, Armory, Event, Blog, Category
 
 #
 # Pages details
@@ -67,7 +67,8 @@ def pages_articles(request, content_type):
 def page_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Blog, category__slug=category, is_active=True)
+  category_obj = Category.objects.get(slug=category)
+  pages = Page.objects.all().filter(category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -79,13 +80,14 @@ def page_category(request, category):
       # If page is out of range (e.g. 9999), deliver last page of results.
       pages = paginator.page(paginator.num_pages)
 
-  return render_to_response('pages/blog_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+  return render_to_response('pages/blog_category.html', {'pages': pages, 'category': category_obj}, context_instance=RequestContext(request))
 
 
 def blog_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Blog, category__slug=category, is_active=True)
+  category_obj = Category.objects.get(slug=category)
+  pages = Blog.objects.all().filter(category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -97,12 +99,14 @@ def blog_category(request, category):
       # If page is out of range (e.g. 9999), deliver last page of results.
       pages = paginator.page(paginator.num_pages)
 
-  return render_to_response('pages/blog_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+  return render_to_response('pages/blog_category.html', {'pages': pages, 'category': category_obj}, context_instance=RequestContext(request))
 
 def events_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Event, category__slug=category, is_active=True)
+  category_obj = Category.objects.get(slug=category)
+
+  pages = Event.objects.all().filter(category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -115,12 +119,13 @@ def events_category(request, category):
       pages = paginator.page(paginator.num_pages)
 
   category_description = 'events_' + category
-  return render_to_response('pages/event_category.html', {'pages': pages, 'category': category, 'category_description': category_description}, context_instance=RequestContext(request))
+  return render_to_response('pages/event_category.html', {'pages': pages, 'category': category_obj, 'category_description': category_description}, context_instance=RequestContext(request))
 
 def armory_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Armory, category__slug=category, is_active=True)
+  category_obj = Category.objects.get(slug=category)
+  pages = Armory.objects.all().filter(category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -132,12 +137,13 @@ def armory_category(request, category):
       # If page is out of range (e.g. 9999), deliver last page of results.
       pages = paginator.page(paginator.num_pages)
 
-  return render_to_response('pages/armory_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+  return render_to_response('pages/armory_category.html', {'pages': pages, 'category': category_obj}, context_instance=RequestContext(request))
 
 def library_category(request, category):
   page = request.GET.get('page')
 
-  pages = get_list_or_404(Library, category__slug=category, is_active=True)
+  category_obj = Category.objects.get(slug=category)
+  pages = Library.objects.all().filter(category__slug=category, is_active=True)
   paginator = Paginator(pages, 3)
 
   try:
@@ -149,4 +155,4 @@ def library_category(request, category):
       # If page is out of range (e.g. 9999), deliver last page of results.
       pages = paginator.page(paginator.num_pages)
 
-  return render_to_response('pages/library_category.html', {'pages': pages, 'category': category}, context_instance=RequestContext(request))
+  return render_to_response('pages/library_category.html', {'pages': pages, 'category': category_obj}, context_instance=RequestContext(request))
