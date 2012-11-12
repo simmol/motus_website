@@ -9,7 +9,7 @@
       {% endcomment %}
       {% for photo in  lattest_photos %}
       <a href="{{ photo.get_absolute_url }}" title="{{ photo.title }}">
-          <img src="{{ photo.get_thumbnail_url }}" />
+        <img src="{{ photo.get_lattest_photos_url }}" />
         </a>
       {% endfor %}
     </div>
