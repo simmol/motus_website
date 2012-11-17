@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-17 13:46+0200\n"
-"PO-Revision-Date: 2012-11-17 13:47\n"
+"POT-Creation-Date: 2012-11-17 14:00+0200\n"
+"PO-Revision-Date: 2012-11-17 14:01\n"
 "Last-Translator: Pavlin Angelov <fonix.simmol@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -736,6 +736,10 @@ msgstr ""
 #: sorl/thumbnail/admin/compat.py:56
 msgid "Clear image"
 msgstr ""
+
+#: templates/base.html:92
+msgid "Social networks"
+msgstr "Социални мрежи"
 
 #: templates/index.html:14
 msgid "Short Information"
