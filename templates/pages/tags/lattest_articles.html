@@ -1,9 +1,11 @@
 {% load i18n %}
 
 <div class="lattest-articles">
-  <h2>
-    {%trans 'Lattest Articles' %}
-  </h2>
+  {% if article %}
+    <h2>
+      {%trans 'Latest Articles' %}
+    </h2>
+  {% endif %}
   {% for article in articles %}
     <article class="listedArticle">
       <h2><a href="{% url pages.views.library_article article.slug %}">{{ article.title }}</a></h2>
