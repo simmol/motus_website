@@ -20,8 +20,8 @@ ADMIN_LANGUAGE_CODE = 'en'
 
 gettext = lambda s: s
 LANGUAGES = [
-    ('en', gettext('English')),
     ('bg', gettext('Bulgarian')),
+    ('en', gettext('English')),
 ]
 
 
