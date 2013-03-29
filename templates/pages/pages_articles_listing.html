@@ -36,9 +36,11 @@
       <a href="?page={{ pages.previous_page_number }}"> {%trans 'Previous' %}</a>
     {% endif %}
 
-    <span class="current">
-      {%trans 'Page' %} {{ pages.number }} {%trans 'of' %} {{ pages.paginator.num_pages }}.
-    </span>
+    {% if pages.paginator.num_pages != 1 %}
+      <span class="current">
+        {%trans 'Page' %} {{ pages.number }} {%trans 'of' %} {{ pages.paginator.num_pages }}.
+      </span>
+    {% endif %}
 
     {% if pages.has_next %}
       <a href="?page={{ pages.next_page_number }}">{%trans 'Next' %}</a>
