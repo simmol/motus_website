@@ -28,7 +28,7 @@ LANGUAGES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'newproject',                      # Or path to database file if using sqlite3.
+        'NAME': 'motus',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -73,7 +73,8 @@ LOCAL_INSTALLED_APPS = (
   'tagging',
   'modeltranslation',
   #
-  'sorl.thumbnail',
+  #'sorl.thumbnail',
+  'easy_thumbnails',
   # Custom
   'photologue',
   'imperavi',
@@ -112,4 +113,10 @@ CONTENT_TYPES_LABELS = {
   'ARM': gettext('armory'),
   'EVE': gettext('events'),
   'BLG': gettext('blog'),
+}
+
+THUMBNAIL_ALIASES = {
+  '': {
+    'avatar': {'size': (100, 100), 'crop': True},
+  },
 }
