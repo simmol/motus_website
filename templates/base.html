@@ -90,12 +90,10 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
             <ul id="languageSwitch">
                 <li>
                     <form action="/i18n/setlang/" method="post">{% csrf_token %}
-                        <input name="next" type="hidden" value="/"/>
+                        <input name="next" type="hidden" value=""/>
                         <select name="language">
                             {% for lang in LANGUAGES %}
-                            <option value="{{ lang.0 }}"
-                            {% ifequal LANGUAGE_CODE lang.0 %} selected="selected" {% endifequal %} >{{ lang.1
-                            }}</option>
+                              <option value="{{ lang.0 }}"{% ifequal LANGUAGE_CODE lang.0 %} selected="selected" {% endifequal %} >{{ lang.1}}</option>
                             {% endfor %}
                         </select>
                         <input type="submit" value="Go"/>
