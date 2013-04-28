@@ -8,13 +8,19 @@
 <h2 class="mainGallery">{{ object.title }}</h2>
 <h3 class="galleryTitle">{% trans "Originally published" %} {{ object.date_added|date:"l, F jS, Y" }}</h3>
 {% if object.description %}<p>{{ object.description }}</p>{% endif %}
-<div class="photo-gallery">
+<div id="galleria" class="photo-gallery">
     {% for photo in object.public %}
-    <div class="gallery-photo {% if forloop.counter|divisibleby:3 %} noMargin{% endif %}" >
-        <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
-    </div>
+    <a class="gallery-photo" href="{{ photo.get_display_url }}">
+      <img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" data-description="{% if photo.caption %} {{ photo.caption }} {% endif %}" />
+    </a>
     {% endfor %}
 </div>
 <p class="clear"><a href="{% url pl-gallery-list 1 %}">{% trans "View all galleries" %}</a></p>
 
+<script>
+  $('#galleria').galleria({
+    'width': 700,
+    'height': 467,
+  });
+</script>
 {% endblock %}
